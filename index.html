@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>daetz · AI / Agent 工程与技术作品集</title>
+<meta name="description" content="daetz — Agent 工程与技术作品集：Agent Harness、LangGraph 工作流、Hybrid RAG、LLM-as-Judge 评估、DSH 生态插件等实战项目整理。">
+<style>
+  :root {
+    --bg: #f6f8fa;
+    --bg-card: #ffffff;
+    --bg-soft: #eef1f5;
+    --border: #d9dee3;
+    --text: #1f2328;
+    --text-dim: #57606a;
+    --accent: #0969da;
+    --accent-2: #1a7f37;
+    --accent-3: #9a6700;
+    --purple: #8250df;
+    --radius: 12px;
+    --shadow: 0 1px 3px rgba(31,35,40,.08);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", "Helvetica Neue", sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 1000px; margin: 0 auto; padding: 24px 20px 80px; }
+
+  header { padding: 40px 0 28px; border-bottom: 1px solid var(--border); }
+  .badge-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .badge-row img { height: 20px; border-radius: 4px; }
+  h1 { font-size: 2rem; font-weight: 800; letter-spacing: .3px; margin-bottom: 4px; }
+  .role { font-size: 1.1rem; color: var(--accent); font-weight: 600; margin-bottom: 12px; }
+  .tagline { color: var(--text-dim); font-size: 1.0rem; max-width: 780px; }
+  .channels { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+  .channel {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 7px 15px; border: 1px solid var(--border);
+    border-radius: 8px; background: var(--bg-card);
+    color: var(--text); text-decoration: none; font-size: .9rem; box-shadow: var(--shadow);
+    transition: border-color .15s, transform .1s;
+  }
+  .channel:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-1px); }
+
+  section { padding: 28px 0; border-bottom: 1px solid var(--border); }
+  section:last-of-type { border-bottom: none; }
+  h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
+  h2 .bar { display: inline-block; width: 4px; height: 20px; background: var(--accent); border-radius: 2px; }
+
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 12px; }
+  .stat { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; text-align: center; box-shadow: var(--shadow); }
+  .stat .num { font-size: 1.4rem; font-weight: 800; color: var(--accent); }
+  .stat .lbl { font-size: .78rem; color: var(--text-dim); margin-top: 2px; }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow);
+    display: flex; flex-direction: column;
+  }
+  .card h3 { font-size: 1.06rem; margin-bottom: 4px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .card h3 a { color: var(--text); text-decoration: none; }
+  .card h3 a:hover { color: var(--accent); }
+  .card .stars { font-size: .8rem; color: var(--accent-3); font-weight: 600; }
+  .card .lang-chip {
+    display: inline-block; font-size: .74rem; color: var(--purple);
+    border: 1px solid rgba(130,80,223,.3); background: rgba(130,80,223,.07);
+    padding: 1px 9px; border-radius: 999px; margin: 6px 8px 8px 0;
+  }
+  .card p { color: var(--text-dim); font-size: .9rem; flex: 1; }
+  .card .tech { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 5px; }
+  .card .tech span { font-size: .72rem; background: var(--bg-soft); border: 1px solid var(--border); padding: 2px 8px; border-radius: 6px; color: var(--text); }
+  .hl { color: var(--accent-2); font-weight: 600; }
+
+  .tech-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tech-list span { background: var(--bg-card); border: 1px solid var(--border); padding: 5px 13px; border-radius: 8px; font-size: .85rem; color: var(--text); box-shadow: var(--shadow); }
+
+  footer { margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: .82rem; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="badge-row">
+      <a href="https://github.com/daetz-coder"><img src="https://img.shields.io/badge/GitHub-daetz--coder-181717?logo=github" alt="GitHub"></a>
+      <a href="https://www.npmjs.com/package/dsh-multi-chat"><img src="https://img.shields.io/npm/v/dsh-multi-chat" alt="npm"></a>
+      <a href="https://blog.csdn.net/a_student_2020"><img src="https://img.shields.io/badge/Blog-CSDN-FC5531" alt="CSDN"></a>
+    </div>
+    <h1>daetz</h1>
+    <div class="role">Agent Engineering · AI / LLM 应用 · 开源</div>
+    <p class="tagline">
+      专注 <span class="hl">Agent 系统</span>与 <span class="hl">RAG 工具链</span>的工程实践：
+      Agent Harness、LangGraph 工作流、混合检索、LLM-as-Judge 评估，以及 Agent 生态插件与发布。
+      强调「从 0 到 1 构建可运行、可验证、可运营」的技术产品。
+    </p>
+    <div class="channels">
+      <a class="channel" href="https://github.com/daetz-coder" target="_blank" rel="noopener">🐙 GitHub</a>
+      <a class="channel" href="https://www.npmjs.com/package/dsh-multi-chat" target="_blank" rel="noopener">📦 npm</a>
+      <a class="channel" href="https://blog.csdn.net/a_student_2020" target="_blank" rel="noopener">🖥️ CSDN</a>
+      <a class="channel" href="https://www.zhihu.com/people/yi-yue-wang-ta-xiang" target="_blank" rel="noopener">💡 知乎</a>
+    </div>
+  </header>
+
+  <section>
+    <h2><span class="bar"></span>概览</h2>
+    <div class="stats">
+      <div class="stat"><div class="num">20+</div><div class="lbl">公开仓库</div></div>
+      <div class="stat"><div class="num">8</div><div class="lbl">Agent 项目</div></div>
+      <div class="stat"><div class="num">6</div><div class="lbl">AI/ML 项目</div></div>
+      <div class="stat"><div class="num">0.6.x</div><div class="lbl">npm 已发布</div></div>
+      <div class="stat"><div class="num">5+</div><div class="lbl">生态收录渠道</div></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="bar"></span>Agent 项目</h2>
+    <div class="grid">
+
+      <div class="card">
+        <h3><a href="https://github.com/daetz-coder/DeepSupport-OS">🛠️ DeepSupport-OS</a></h3>
+        <span class="lang-chip">Python · Agent Harness</span>
+        <p>企业 IT Help Desk <span class="hl">Agent Harness</span>：M365 Help Desk · Skills/Subagents · HITL 人工闭环 · 文件工作区 · 自动化评测。</p>
+        <div class="tech"><span>Vue3</span><span>FastAPI</span><span>LangGraph</span><span>MCP</span><span>RAG</span><span>SSE</span></div>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/daetz-coder/Agent-Runtime-Evaluation-Platform">📊 Agent 运行时评估</a></h3>
+        <span class="lang-chip">Python · Agent 评估</span>
+        <p>AI Agent 运行时全维度质量评估：<span class="hl">6 维 LLM-as-Judge</span>（规划/决策/工具/记忆/重规划/检索），多模型共识、增量评估。</p>
+        <div class="tech"><span>FastAPI</span><span>LangGraph</span><span>LLM-as-Judge</span></div>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/daetz-coder/AgentLink">📱 AgentLink</a></h3>
+        <span class="lang-chip">Dart · Mobile × Agent</span>
+        <p><span class="hl">Claude Code 手机协作</span>：Windows 主机台 + Android App，手机审批、回答问题、同一会话继续。WebSocket 双向桥接。</p>
+        <div class="tech"><span>Flutter</span><span>Node.js</span><span>WebSocket</span></div>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/daetz-coder/AgentForge">⚙️ AgentForge</a></h3>
+        <span class="lang-chip">Python · Desktop Agent</span>
+        <p>Windows 控制台：自动检测用量上限、<span class="hl">切换账户并同会话续跑</span>。Flutter UI + Python agent 编排。</p>
+        <div class="tech"><span>Python</span><span>Flutter</span><span>FastAPI</span></div>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/daetz-coder/RAGLab">📚 RAGLab</a></h3>
+        <span class="lang-chip">Python · RAG</span>
+        <p>中文企业公开报告 <span class="hl">Hybrid RAG</span>：Docling 解析 · Qdrant 稠密/稀疏检索 · 查询硬过滤 · 带引用生成与拒答 · 评测看板。</p>
+        <div class="tech"><span>FastAPI</span><span>Qdrant</span><span>Docling</span><span>BGE</span><span>Vue3</span></div>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/daetz-coder/dsh-multi-chat">💬 dsh-multi-chat</a><span class="stars">★ npm 已发布</span></h3>
+        <span class="lang-chip">TypeScript · DSH 插件</span>
+        <p>DeepSeek Harness <span class="hl">多窗口墙插件</span>：并排运行/监控 N 个 Agent 实例，内置认证局域网网关。已发布 npm、被官方生态收录。</p>
+        <div class="tech"><span>TypeScript</span><span>React</span><span>Cordis</span><span>npm</span></div>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/daetz-coder/wiki-agent">🧠 wiki-agent</a></h3>
+        <span class="lang-chip">Python · 知识库 Agent</span>
+        <p>AI 驱动的个人知识库，<span class="hl">对话即录入、搜索即召回</span>。LangGraph Agent 编排，让知识库「自己长大」。</p>
+        <div class="tech"><span>LangGraph</span><span>FastAPI</span><span>Vue3</span></div>
+      </div>
+
+      <div class="card">
+        <h3><a href="https://github.com/daetz-coder/git-reporter">📝 git-reporter</a></h3>
+        <span class="lang-chip">Claude Code Skill</span>
+        <p><span class="hl">Claude Code skill</span>：从 git 提交历史自动生成日/周/月报，双语输出、参考文档学习、多输出模式。</p>
+        <div class="tech"><span>Claude Code</span><span>Skill</span><span>LLM</span></div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="bar"></span>AI / 机器学习实践</h2>
+    <div class="grid">
+      <div class="card"><h3><a href="https://github.com/daetz-coder/RadioML2016.10a_CNN">📡 RadioML CNN</a><span class="stars">★ 36</span></h3><p>调制信号识别：MLP / CNN / ResNet 对比。</p><span class="lang-chip">PyTorch · CNN</span></div>
+      <div class="card"><h3><a href="https://github.com/daetz-coder/CIC-DDoS2019-Detection">🛡️ DDoS 检测</a><span class="stars">★ 19</span></h3><p>CIC-DDoS2019 网络入侵检测，含 PCA/t-SNE 分析。</p><span class="lang-chip">ML · DL</span></div>
+      <div class="card"><h3><a href="https://github.com/daetz-coder/Metal_Surface_Defects">🔧 金属缺陷检测</a><span class="stars">★ 14</span></h3><p>金属表面缺陷检测实战，工业质检方向。</p><span class="lang-chip">CV</span></div>
+      <div class="card"><h3><a href="https://github.com/daetz-coder/VectorNet_Code_Replication">🚗 VectorNet 复现</a><span class="stars">★ 14</span></h3><p>VectorNet 轨迹预测复现，含可运行数据集。</p><span class="lang-chip">轨迹预测</span></div>
+      <div class="card"><h3><a href="https://github.com/daetz-coder/Pytorch-MAML-Tutorial">🎓 Pytorch-MAML</a><span class="stars">★ 10</span></h3><p>Omniglot few-shot 元学习：MAML 复现与讲解。</p><span class="lang-chip">元学习</span></div>
+      <div class="card"><h3><a href="https://github.com/daetz-coder/emotion_detection_client_server">😊 情绪识别</a><span class="stars">★ 1</span></h3><p>实时人脸情绪识别，Server/Local 双端部署。</p><span class="lang-chip">CV</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="bar"></span>技术栈</h2>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <div class="tech-list"><span>Python</span><span>TypeScript</span><span>JavaScript</span><span>Dart/Flutter</span><span>Vue3</span><span>React</span></div>
+      <div class="tech-list"><span>LangGraph</span><span>LangChain</span><span>FastAPI</span><span>Node.js</span><span>WebSocket</span><span>SSE</span></div>
+      <div class="tech-list"><span>RAG / Hybrid RAG</span><span>Qdrant</span><span>LLM-as-Judge</span><span>Agent Harness</span><span>MCP</span><span>PyTorch</span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="bar"></span>生态收录</h2>
+    <p class="muted" style="margin-bottom:12px">dsh-multi-chat 插件的发布与收录记录（可点击验证）：</p>
+    <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+      <div class="card"><p style="flex:0 0 auto">📦 <a href="https://www.npmjs.com/package/dsh-multi-chat"><span class="hl">npm</span></a> · 已发布</p></div>
+      <div class="card"><p style="flex:0 0 auto">✅ <a href="https://github.com/awesome-dsh-plugin/awesome-dsh-plugin"><span class="hl">awesome-dsh-plugin</span></a></p></div>
+      <div class="card"><p style="flex:0 0 auto">✅ <a href="https://github.com/beancookie/awesome-dsh-plugin"><span class="hl">beancookie</span></a></p></div>
+      <div class="card"><p style="flex:0 0 auto">✅ <a href="https://dshfind.com/plugins/daetz-coder/dsh-multi-chat"><span class="hl">dshfind</span></a></p></div>
+      <div class="card"><p style="flex:0 0 auto">✅ <a href="https://github.com/Dominic789654/awesome-deepseek-harness"><span class="hl">awesome-deepseek-harness</span></a></p></div>
+    </div>
+  </section>
+
+  <footer>
+    daetz · Agent Engineering & AI 应用 · <a href="https://github.com/daetz-coder">GitHub</a> ·
+    <a href="https://www.npmjs.com/package/dsh-multi-chat">npm</a> ·
+    <a href="https://blog.csdn.net/a_student_2020">CSDN</a> ·
+    <a href="https://www.zhihu.com/people/yi-yue-wang-ta-xiang">知乎</a>
+  </footer>
+
+</div>
+</body>
+</html>
