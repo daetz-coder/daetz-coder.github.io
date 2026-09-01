@@ -45,7 +45,7 @@ code{font-family:ui-monospace,"SF Mono","JetBrains Mono","Cascadia Code",Consola
 [data-theme="light"] .nav{background:color-mix(in srgb,var(--bg) 66%,transparent)}
 .nav-inner{max-width:1120px;margin:0 auto;height:100%;padding:0 22px;display:flex;align-items:center;gap:4px}
 .brand{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:800;font-size:.98rem;margin-right:auto;text-decoration:none}
-.brand-mark{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#0e7490);color:#04121a;font-family:ui-monospace,monospace;font-size:.72rem;font-weight:800;box-shadow:0 0 16px var(--accent-line)}
+.brand-mark{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#34d399 60%,#0e7490);color:#04121a;font-family:ui-monospace,monospace;font-size:.95rem;font-weight:800;font-style:italic;letter-spacing:-.02em;box-shadow:0 0 18px var(--accent-line),inset 0 1px 0 rgba(255,255,255,.25)}
 .nav a:not(.brand){color:var(--dim);font-size:.86rem;font-weight:600;padding:6px 12px;border-radius:999px;transition:color .2s,background .2s}
 .nav a:not(.brand):hover{color:var(--accent);background:var(--accent-soft)}
 .nav a.active{color:var(--accent);background:var(--accent-soft)}
@@ -254,6 +254,7 @@ html.js .reveal.d4{transition-delay:.32s}
 .ch-head{display:flex;align-items:center;gap:11px;margin-bottom:16px}
 .ch-head .logo{width:38px;height:38px;border-radius:11px;background:var(--card);border:1px solid var(--line);display:grid;place-items:center;flex-shrink:0}
 .ch-head .logo img{width:22px;height:22px}
+.ch-head .logo svg{width:22px;height:22px;color:var(--text)}
 .ch-name{font-size:1.12rem;font-weight:800}
 .ch-link{font-size:.78rem;color:var(--accent);font-weight:600;margin-left:auto;display:inline-flex;align-items:center;gap:4px}
 .ch-link svg{width:12px;height:12px}
@@ -304,6 +305,7 @@ html.js .reveal.d4{transition-delay:.32s}
 .contact .ci-ico{width:34px;height:34px;border-radius:10px;background:var(--card-2);border:1px solid var(--line);display:grid;place-items:center;flex-shrink:0}
 .contact .ci-ico img{width:18px;height:18px}
 .contact .ci-ico svg{width:17px;height:17px;color:var(--accent)}
+.contact .ci-ico svg.gh-icon{color:var(--text)}
 .contact .ci-name{font-size:.9rem;font-weight:700;line-height:1.2}
 .contact .ci-sub{font-size:.72rem;color:var(--faint)}
 .contact .ci-link{font-size:.74rem;color:var(--accent);margin-left:auto;font-weight:600}
@@ -548,7 +550,8 @@ html.js .no-js-hide{display:none}
 .sb-links a:hover{color:var(--accent);background:var(--accent-soft)}
 .sb-links a .ci{width:24px;height:24px;border-radius:7px;background:var(--card-2);border:1px solid var(--line);display:grid;place-items:center;flex-shrink:0}
 .sb-links a .ci img{width:13px;height:13px}
-.sb-links a .ci svg{width:13px;height:13px;color:var(--accent)}
+.sb-links a .ci svg{width:14px;height:14px;color:var(--dim)}
+.sb-links a:hover .ci svg{color:var(--accent)}
 .sb-links a .go{margin-left:auto;font-size:.68rem;color:var(--faint)}
 .sb-links a.copy-handle{cursor:pointer}
 
@@ -574,7 +577,3 @@ html.js .no-js-hide{display:none}
   .crumb-nav{margin-top:8px}
 }
 
-/* brand glyph theme adapt */
-[data-theme="dark"] .sb-links .ci img[src*="github"],
-[data-theme="dark"] .contact .ci-ico img[src*="github"]{filter:invert(1) brightness(.9)}
-[data-theme="dark"] .ch-head .logo img[src*="github"]{filter:invert(1) brightness(.9)}

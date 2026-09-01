@@ -558,7 +558,7 @@ function renderPage(p){
 <div id="progress"><i></i></div>
 <nav class="nav" aria-label="主导航">
   <div class="nav-inner">
-    <a class="brand" href="../../"><span class="brand-mark">&gt;_</span>daetz</a>
+    <a class="brand" href="../../"><span class="brand-mark">d</span>daetz</a>
     <a href="../../#projects">项目</a>
     <a href="../../#blog">博客</a>
     <a href="../../#contact">联系</a>
