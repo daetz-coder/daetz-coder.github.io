@@ -1,0 +1,14 @@
+const fs = require('fs');
+const h = fs.readFileSync('D:/2026AppDev/daetz-coder.github.io/index.html','utf8');
+const log = (k,v)=>console.log(k+': '+v);
+log('css link', h.includes('<link rel="stylesheet" href="assets/css/site.css">'));
+log('js src', h.includes('<script src="assets/js/site.js"></script>'));
+log('inline style remains', /<style>/.test(h));
+log('inline main script remains', (h.match(/<script>\s*\(function/g)||[]).length);
+log('projGrid cards', (h.match(/<article class="card reveal/g)||[]).length);
+log('works links', (h.match(/href="projects\//g)||[]).length);
+log('blog posts', (h.match(/class="post reveal/g)||[]).length);
+log('id=agent anchor', h.includes('id="agent"'), );
+log('id=ml anchor', h.includes('id="ml"'));
+log('focus section', h.includes('id="focus"'));
+log('size', h.length);

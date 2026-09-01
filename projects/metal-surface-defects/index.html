@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金属缺陷检测 · daetz 作品集</title>
+<meta name="description" content="金属表面缺陷检测类实践项目，工业质检方向。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金属缺陷检测 · daetz">
+<meta property="og:description" content="金属表面缺陷检测类实践项目，工业质检方向。">
+<meta name="theme-color" content="#0b1017">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b1017'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='26' font-weight='700' text-anchor='middle' fill='%2322d3ee'%3Edaetz%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="../../assets/css/site.css">
+<script>document.documentElement.classList.add('js');</script>
+<script>try{var t=localStorage.getItem('daetz-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
+</head>
+<body>
+<div id="progress"><i></i></div>
+<nav class="nav" aria-label="主导航">
+  <div class="nav-inner">
+    <a class="brand" href="../../"><span class="brand-mark">&gt;_</span>daetz</a>
+    <a href="../../#projects">项目</a>
+    <a href="../../#blog">博客</a>
+    <a href="../../#contact">联系</a>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="切换主题" title="切换深浅主题">
+        <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <button class="icon-btn" id="menuBtn" aria-label="打开菜单" title="菜单">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mm-close" id="mmClose" aria-label="关闭菜单"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  <a href="../../">主页</a>
+  <a href="../../#projects">项目</a>
+  <a href="../../#blog">博客</a>
+  <a href="../../#contact">联系</a>
+</div>
+
+<main class="container">
+
+  <div class="crumbs reveal">
+    <a href="../../">主页</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+    <a href="../../#projects">项目</a><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
+    <span class="now">金属缺陷检测</span>
+  </div>
+
+  <header class="proj-hero">
+    <div>
+      <span class="pj-eyebrow reveal"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M19.1 4.9l-2.8 2.8M7.7 16.3l-2.8 2.8"/></svg>AI/ML · Open Source</span>
+      <h1 class="pj-title reveal">金属缺陷检测</h1>
+      <p class="pj-desc reveal d1">金属表面缺陷检测类实践项目，工业质检方向。</p>
+      <div class="pj-actions reveal d2"><a class="btn btn-primary" href="https://github.com/daetz-coder/Metal_Surface_Defects" target="_blank" rel="noopener">GitHub 仓库 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        <a class="btn btn-ghost" href="../../">返回主页</a></div>
+      <div class="pj-meta reveal d3"><span><b>★ 14</b> Stars</span><span>Jupyter Notebook</span><span>AI/ML</span><span class="pill-star"><b>Open Source</b></span></div>
+    </div>
+    <div class="pj-visual reveal d2">
+      <div class="pj-frame">
+        <div class="fw-bar"><i></i><i></i><i></i><span>github · Metal_Surface_Defects</span></div>
+        <div class="fw-body"><span class="dim">$</span> <span class="ac">jupyter notebook train.ipynb</span>
+<span class="ok">✓</span> 金属缺陷检测 ready · status: ok</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="overview">
+    <h2 class="reveal"><span class="bar"></span>作品介绍</h2>
+    <div class="prose reveal d1"><p>工业质检入门：金属表面缺陷识别，覆盖数据加载、模型训练与评估，贴近产线检测需求。</p></div>
+  </section>
+
+  <section id="features">
+    <div class="sec-head">
+      <div><h2 class="reveal"><span class="bar"></span>核心特性</h2></div>
+    </div>
+    <div class="feat-grid">
+      <div class="feat reveal d1"><div class="fi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h3l2-5 4 10 2-5h5"/></svg></div><h4>缺陷分类</h4><p>典型金属表面缺陷多类别识别。</p></div>
+      <div class="feat reveal d2"><div class="fi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h3l2-5 4 10 2-5h5"/></svg></div><h4>CV 模型</h4><p>CNN 系列网络训练与调优。</p></div>
+      <div class="feat reveal d3"><div class="fi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h3l2-5 4 10 2-5h5"/></svg></div><h4>产线导向</h4><p>面向质检场景的工程化流程。</p></div>
+      <div class="feat reveal d4"><div class="fi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h3l2-5 4 10 2-5h5"/></svg></div><h4>可复跑</h4><p>notebook 自带数据加载与训练。</p></div>
+    </div>
+  </section>
+
+  <section id="demo">
+    <div class="sec-head">
+      <div>
+        <h2 class="reveal"><span class="bar"></span>界面 / 运行示意</h2>
+        <p class="sec-sub reveal d1">线框示意，展示关键交互与数据形态；完整体验请运行仓库。</p>
+      </div>
+      <a class="sec-link reveal d2" href="https://github.com/daetz-coder/Metal_Surface_Defects" target="_blank" rel="noopener">前往仓库 ↗</a>
+    </div>
+    <div class="demo-grid"><div class="demo-window card reveal"><div class="dw-bar"><i></i><i></i><i></i><span>demo · 数据示意</span></div><div class="dw-body"><div class="tile"><span class="t-name">Star</span><span class="t-val">14</span></div><div class="tile"><span class="t-name">方向</span><span class="t-val">工业质检</span></div><div class="tile"><span class="t-name">方法</span><span class="t-val">CNN</span></div><div class="tile"><span class="t-name">框架</span><span class="t-val">PyTorch</span></div></div></div>
+      <div class="demo-window console reveal d2">
+        <div class="dw-bar"><i></i><i></i><i></i><span>quickstart · 快速开始</span></div>
+        <div class="dw-body"><div class="cmd"><span class="p">$</span> jupyter notebook train.ipynb</div><div class="cmd"><span class="c">> README.md · docs/ · examples/</span></div><div class="cmd"><span class="p">✓</span> open source · MIT friendly</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="related">
+    <div class="sec-head">
+      <div><h2 class="reveal"><span class="bar"></span>相关项目</h2>
+      <p class="sec-sub reveal d1">同一条技术主线上的其他作品。</p></div>
+    </div>
+    <div class="rel-grid">
+      <a class="rel-card" href="../emotion-detection/"><div class="rc-top"><h4>情绪识别</h4><span class="rc-cat">AI/ML</span></div><p>Real-Time Facial Emotion Detection with Server and Local：实时人…</p><span class="rc-go">查看作品 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+      <a class="rel-card" href="../radioml-cnn/"><div class="rc-top"><h4>RadioML CNN</h4><span class="rc-cat">AI/ML</span></div><p>调制信号识别：MLP / CNN / ResNet 对比实验（RadioML2016.10a）。…</p><span class="rc-go">查看作品 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+      <a class="rel-card" href="../mesh-denoising/"><div class="rc-top"><h4>Mesh-Denoising</h4><span class="rc-cat">AI/ML</span></div><p>实现网格去噪方法：「Non-Iterative, Feature-Preserving Mesh Smoothing」复…</p><span class="rc-go">查看作品 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span></a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="f-links">
+    <a href="../../">主页</a>
+    <a href="https://github.com/daetz-coder" target="_blank" rel="noopener">GitHub</a>
+    <a href="https://www.npmjs.com/package/dsh-multi-chat" target="_blank" rel="noopener">npm</a>
+    <a href="https://blog.csdn.net/a_student_2020" target="_blank" rel="noopener">CSDN</a>
+  </div>
+  <span class="host"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4.5 8-11a8 8 0 1 0-16 0c0 6.5 8 11 8 11Z"/><circle cx="12" cy="11" r="2.5"/></svg> GitHub Pages · 123.57.64.231</span>
+  <p>© 2026 daetz · 金属缺陷检测 作品页</p>
+</footer>
+
+<button id="toTop" aria-label="返回顶部">
+  <svg class="ring" viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/></svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+<div id="toast"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>已复制到剪贴板</span></div>
+<script src="../../assets/js/site.js"></script>
+</body>
+</html>
