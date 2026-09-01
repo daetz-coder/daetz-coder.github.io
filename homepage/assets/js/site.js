@@ -214,8 +214,10 @@
   if(toTop)toTop.addEventListener('click',function(){scrollTo({top:0,behavior:prefersReduced?'auto':'smooth'});});
   onScroll();
 
-  /* ===== 导航高亮 ===== */
-  var navLinks=document.querySelectorAll('.nav a[href^="#"]:not(.brand), .mobile-menu a');
+  /* ===== 导航高亮 + 侧边栏导航 + 面包屑 ===== */
+  var navLinks=document.querySelectorAll('.nav a[href^="#"]:not(.brand), .mobile-menu a, .sb-nav a');
+  var crumbNow=document.getElementById('crumbNow');
+  var crumbMap={focus:'简介',projects:'项目精选 · 23 个作品',blog:'技术博客',platforms:'全平台足迹',now:'最近在做',stack:'技术栈',contact:'联系'};
   if('IntersectionObserver' in window){
     var ids=['focus','projects','blog','platforms','now','stack','contact'];
     var secs=ids.map(function(id){return document.getElementById(id);}).filter(Boolean);
@@ -225,6 +227,7 @@
           navLinks.forEach(function(a){
             a.classList.toggle('active',a.getAttribute('href')==='#'+en.target.id);
           });
+          if(crumbNow&&crumbMap[en.target.id])crumbNow.textContent=crumbMap[en.target.id];
         }
       });
     },{rootMargin:'-40% 0px -55% 0px'});
@@ -271,7 +274,8 @@
     var reposN=Array.isArray(repos)?repos.length:(u?u.public_repos:null);
     var map={
       ghRepos:reposN,ghStars:stars,ghFollowers:followers,
-      chRepos:reposN,chStars:stars,chFollowers:followers
+      chRepos:reposN,chStars:stars,chFollowers:followers,
+      sbRepos:reposN,sbStars:stars,sbFollowers:followers
     };
     Object.keys(map).forEach(function(id){
       var el=document.getElementById(id);
@@ -281,6 +285,8 @@
     if(u&&u.public_repos){var rm=document.getElementById('ghRepoMeta');if(rm)rm.innerHTML='<b>'+u.public_repos+'</b> 公开仓库';}
     var av=document.getElementById('ghAvatar');
     if(av&&u&&u.avatar_url)av.src=u.avatar_url+'?s=160';
+    var av2=document.querySelector('.sb-avatar img');
+    if(av2&&u&&u.avatar_url)av2.src=u.avatar_url+'?s=96';
   }
   function loadGithub(){
     var cache=null;
