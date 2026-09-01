@@ -24,7 +24,6 @@
     root.setAttribute('data-theme',t);
     syncIcons(t);
     try{localStorage.setItem('daetz-theme',t);}catch(e){}
-    if(net&&net.themeColor)net.themeColor=t;
   });
 
   /* ===== 移动菜单 ===== */
@@ -101,58 +100,6 @@
       }
       setTimeout(tick,900);
     }
-  }
-
-  /* ===== Hero 粒子背景 ===== */
-  var canvas=document.getElementById('net');
-  var net=null;
-  if(canvas&&!prefersReduced){
-    var ctx=canvas.getContext('2d');
-    var W,H,parts=[],themeColor=theme;
-    var DPR=Math.min(devicePixelRatio||1,2);
-    function resize(){
-      W=canvas.clientWidth;H=canvas.clientHeight;
-      canvas.width=W*DPR;canvas.height=H*DPR;
-      ctx.setTransform(DPR,0,0,DPR,0,0);
-      var n=Math.min(72,Math.floor(W/16));
-      parts=[];
-      for(var i=0;i<n;i++){
-        parts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.28,vy:(Math.random()-.5)*.28,r:Math.random()*1.6+.8});
-      }
-    }
-    function draw(){
-      ctx.clearRect(0,0,W,H);
-      var c=themeColor==='dark'?'34,211,238':'14,116,144';
-      for(var i=0;i<parts.length;i++){
-        var p=parts[i];
-        p.x+=p.vx;p.y+=p.vy;
-        if(p.x<0||p.x>W)p.vx*=-1;
-        if(p.y<0||p.y>H)p.vy*=-1;
-        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-        ctx.fillStyle='rgba('+c+',.5)';ctx.fill();
-        for(var j=i+1;j<parts.length;j++){
-          var q=parts[j],dx=p.x-q.x,dy=p.y-q.y,d=dx*dx+dy*dy;
-          if(d<110*110){
-            ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);
-            ctx.strokeStyle='rgba('+c+','+(0.10*(1-d/(12100)))+')';ctx.lineWidth=1;ctx.stroke();
-          }
-        }
-      }
-    }
-    var visible=true;
-    if('IntersectionObserver' in window){
-      visible=false;
-      var io=new IntersectionObserver(function(en){visible=en[0].isIntersecting;},{threshold:0});
-      io.observe(canvas);
-    }
-    function loop(){
-      if(visible)draw();
-      requestAnimationFrame(loop);
-    }
-    resize();
-    window.addEventListener('resize',resize,{passive:true});
-    loop();
-    net={themeColor:themeColor,resize:resize};
   }
 
   /* ===== 卡片光斑跟随 ===== */
@@ -285,8 +232,6 @@
     if(u&&u.public_repos){var rm=document.getElementById('ghRepoMeta');if(rm)rm.innerHTML='<b>'+u.public_repos+'</b> 公开仓库';}
     var av=document.getElementById('ghAvatar');
     if(av&&u&&u.avatar_url)av.src=u.avatar_url+'?s=160';
-    var av2=document.querySelector('.sb-avatar img');
-    if(av2&&u&&u.avatar_url)av2.src=u.avatar_url+'?s=96';
   }
   function loadGithub(){
     var cache=null;
