@@ -46,6 +46,8 @@ code{font-family:ui-monospace,"SF Mono","JetBrains Mono","Cascadia Code",Consola
 .nav-inner{max-width:1120px;margin:0 auto;height:100%;padding:0 22px;display:flex;align-items:center;gap:4px}
 .brand{display:flex;align-items:center;gap:9px;color:var(--text);font-weight:800;font-size:.98rem;margin-right:auto;text-decoration:none}
 .brand-mark{width:28px;height:28px;border-radius:9px;display:grid;place-items:center;background:linear-gradient(135deg,var(--accent),#34d399 60%,#0e7490);color:#04121a;font-family:ui-monospace,monospace;font-size:.95rem;font-weight:800;font-style:italic;letter-spacing:-.02em;box-shadow:0 0 18px var(--accent-line),inset 0 1px 0 rgba(255,255,255,.25)}
+.brand-mark.brand-avatar{background:var(--card);overflow:hidden;padding:1.5px;border:2px solid var(--accent-line);box-shadow:0 0 14px var(--accent-line)}
+.brand-mark.brand-avatar img{width:100%;height:100%;object-fit:cover;border-radius:7px;display:block}
 .nav a:not(.brand){color:var(--dim);font-size:.86rem;font-weight:600;padding:6px 12px;border-radius:999px;transition:color .2s,background .2s}
 .nav a:not(.brand):hover{color:var(--accent);background:var(--accent-soft)}
 .nav a.active{color:var(--accent);background:var(--accent-soft)}

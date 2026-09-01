@@ -497,8 +497,6 @@ const P = [
 ];
 
 // ---------------------------------------------------------------- template helpers
-const ICONS = 'data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 64 64\'%3E%3Crect width=\'64\' height=\'64\' rx=\'14\' fill=\'%230b1017\'/%3E%3Ctext x=\'32\' y=\'42\' font-family=\'monospace\' font-size=\'26\' font-weight=\'700\' text-anchor=\'middle\' fill=\'%2322d3ee\'%3Edaetz%3C/text%3E%3C/svg%3E';
-
 function esc(s){ return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
 function relLink(p){
@@ -543,13 +541,13 @@ function renderPage(p){
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>${esc(p.name)} · daetz 作品集</title>
+<title>${esc(p.name)} · daetz 主页</title>
 <meta name="description" content="${esc(p.desc)}">
 <meta property="og:type" content="article">
-<meta property="og:title" content="${esc(p.name)} · daetz">
+<meta property="og:title" content="${esc(p.name)} · daetz 主页">
 <meta property="og:description" content="${esc(p.desc.slice(0,100))}">
 <meta name="theme-color" content="#0b1017">
-<link rel="icon" href="${ICONS}">
+<link rel="icon" href="https://avatars.githubusercontent.com/u/77006398?v=4&s=64">
 <link rel="stylesheet" href="../../assets/css/site.css">
 <script>document.documentElement.classList.add('js');</script>
 <script>try{var t=localStorage.getItem('daetz-theme')||(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
@@ -558,7 +556,7 @@ function renderPage(p){
 <div id="progress"><i></i></div>
 <nav class="nav" aria-label="主导航">
   <div class="nav-inner">
-    <a class="brand" href="../../"><span class="brand-mark">d</span>daetz</a>
+    <a class="brand" href="../../"><span class="brand-mark brand-avatar"><img src="https://avatars.githubusercontent.com/u/77006398?v=4&s=56" alt="daetz 头像"></span>daetz</a>
     <a href="../../#projects">项目</a>
     <a href="../../#blog">博客</a>
     <a href="../../#contact">联系</a>
