@@ -132,7 +132,7 @@ h1 .grad{background:linear-gradient(100deg,var(--accent) 10%,#67e8f9 55%,#34d399
 .id-foot .mini-social{display:flex;gap:7px}
 .mini-social a{width:30px;height:30px;border-radius:9px;border:1px solid var(--line);display:grid;place-items:center;color:var(--dim);transition:all .2s}
 .mini-social a:hover{color:var(--accent);border-color:var(--accent-line);transform:translateY(-2px)}
-.mini-social svg{width:14px;height:14px}
+.mini-social svg,.mini-social img{width:14px;height:14px}
 
 /* ==== 数据条 ==== */
 .stats{
