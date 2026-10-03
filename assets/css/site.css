@@ -348,25 +348,25 @@ html.js .reveal.d4{transition-delay:.32s}
 .tech-line{font-size:.97rem;line-height:2.1;color:var(--dim)}
 .tech-line b{color:var(--text);font-weight:500}
 
-/* ==== 联系（细线行列表） ==== */
-.contact{display:grid;grid-template-columns:repeat(2,1fr);column-gap:64px}
+/* ==== 联系（横向单行条带） ==== */
+.contact{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .contact a,.contact .c-item{
-  display:flex;align-items:center;gap:14px;padding:16px 0;border:none;
-  border-bottom:1px solid var(--line-soft);border-radius:0;background:none;
-  color:var(--text);text-decoration:none;
-  transition:padding-left .25s var(--ease);
+  position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+  padding:18px 12px;border:none;border-left:1px solid var(--line-soft);border-radius:0;
+  background:none;color:var(--text);text-decoration:none;
+  transition:background .25s var(--ease);
 }
-.contact a:hover{padding-left:6px;box-shadow:none;transform:none}
+.contact a:first-child{border-left:none;padding-left:0}
+.contact a:hover{background:var(--bg-2);box-shadow:none;transform:none}
 .contact a:hover .ci-name{color:var(--accent)}
-.contact .ci-ico{width:28px;height:28px;border-radius:0;background:none;border:none;display:grid;place-items:center;flex-shrink:0}
-.contact .ci-ico img{width:17px;height:17px;opacity:.85}
-.contact .ci-ico svg{width:16px;height:16px;color:var(--text)}
-.contact .ci-name{font-size:.88rem;font-weight:600;line-height:1.2;transition:color .2s}
-.contact .ci-sub{font-family:var(--f-mono);font-size:.64rem;color:var(--faint)}
-.contact .ci-link{font-family:var(--f-mono);font-size:.66rem;color:var(--dim);margin-left:auto;font-weight:500;transition:color .2s}
-.contact a:hover .ci-link{color:var(--accent)}
-.contact .c-item{cursor:pointer;position:relative}
-.contact .c-item .ci-link{color:var(--dim)}
+.contact .ci-ico{width:24px;height:24px;border-radius:0;background:none;border:none;display:grid;place-items:center;flex-shrink:0;margin-bottom:10px}
+.contact .ci-ico img{width:16px;height:16px;opacity:.85}
+.contact .ci-ico svg{width:15px;height:15px;color:var(--text)}
+.contact .ci-name{font-size:.86rem;font-weight:600;line-height:1.25;transition:color .2s}
+.contact .ci-sub{font-family:var(--f-mono);font-size:.58rem;color:var(--faint);line-height:1.6}
+.contact .ci-link{position:absolute;top:16px;right:12px;font-family:var(--f-mono);font-size:.62rem;color:var(--dim);margin-left:0;font-weight:500;opacity:0;transition:opacity .2s,color .2s}
+.contact a:hover .ci-link{opacity:1;color:var(--accent)}
+.contact .c-item{cursor:pointer}
 
 /* ==== 页脚 ==== */
 footer{
@@ -430,7 +430,9 @@ footer .host svg{width:11px;height:11px;color:var(--ok)}
   .ch-card{border-left:none;border-top:1px solid var(--line-soft);padding:24px 0 8px}
   .ch-card:first-child{border-top:none;padding-left:0}
   .grid{grid-template-columns:1fr}
-  .contact{grid-template-columns:1fr}
+  .contact{grid-template-columns:repeat(3,1fr)}
+  .contact a:nth-child(3n+1){border-left:none;padding-left:0}
+  .contact .ci-link{opacity:1}
   .proj-hero{grid-template-columns:1fr;gap:28px}
   .pj-stats{grid-template-columns:repeat(2,1fr)}
 }
@@ -446,6 +448,8 @@ footer .host svg{width:11px;height:11px;color:var(--ok)}
   section{padding:64px 0}
   .container{padding:0 16px 72px}
   .hero{padding-top:36px}
+  .contact{grid-template-columns:repeat(2,1fr)}
+  .contact a:nth-child(odd){border-left:none;padding-left:0}
 }
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001s!important;animation-iteration-count:1!important;transition-duration:.001s!important}
