@@ -16,7 +16,7 @@
     if(t==='dark'){sun.style.display='';moon.style.display='none';}
     else{sun.style.display='none';moon.style.display='';}
     var mc=document.querySelector('meta[name="theme-color"]');
-    if(mc)mc.setAttribute('content',t==='dark'?'#070b11':'#f4f7fb');
+    if(mc)mc.setAttribute('content',t==='dark'?'#0a0a0b':'#fafafa');
   }
   var themeBtn=document.getElementById('themeBtn');
   if(themeBtn)themeBtn.addEventListener('click',function(){
