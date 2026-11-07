@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6efe2">
+  <title>DAETZ STUDIO · 大鹅同志工作室</title>
+  <meta name="description" content="DAETZ STUDIO（大鹅同志工作室）是独立游戏工作室，作品有漫画风肉鸽打砖块游戏《墨弹连击》。">
+  <link rel="canonical" href="https://daetz-coder.github.io/studio/">
+  <link rel="icon" href="./assets/daetz-studio.png" type="image/png">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="DAETZ STUDIO · 大鹅同志工作室">
+  <meta property="og:description" content="独立游戏工作室 · 《墨弹连击》">
+  <meta property="og:url" content="https://daetz-coder.github.io/studio/">
+  <meta property="og:image" content="https://daetz-coder.github.io/studio/assets/daetz-studio.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #171413;
+      --paper: #f6efe2;
+      --red: #a82a22;
+      --rule: #c7b8a7;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font: 1rem/1.7 system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    a { color: inherit; }
+    a:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
+    img { display: block; max-width: 100%; height: auto; }
+    h1, h2, p, figure { margin: 0; }
+    .wrap { width: min(100% - 3rem, 72rem); margin-inline: auto; }
+    .header, .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: .75rem 1.5rem;
+      padding-block: 1.1rem;
+    }
+    .header { border-bottom: 1px solid var(--rule); }
+    .brand, .eyebrow {
+      font-weight: 850;
+      font-size: .78rem;
+      letter-spacing: .12em;
+    }
+    .brand { text-decoration: none; }
+    .navigation { display: flex; gap: 1.5rem; }
+    .navigation a { font-size: .9rem; text-underline-offset: .25em; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr minmax(16rem, .8fr);
+      align-items: center;
+      gap: clamp(2rem, 6vw, 5rem);
+      padding-block: clamp(3rem, 7vw, 6rem);
+    }
+    .eyebrow { color: var(--red); }
+    .hero h1 {
+      margin-top: .7rem;
+      font-size: clamp(2.8rem, 8vw, 6.5rem);
+      font-weight: 950;
+      letter-spacing: -.065em;
+      line-height: .92;
+    }
+    .hero h1 span { display: block; }
+    .studio-name { margin-top: 1.4rem; font-size: 1.4rem; font-weight: 800; }
+    .intro { max-width: 28rem; margin-top: .5rem; }
+    .mark {
+      display: grid;
+      place-items: center;
+      justify-self: center;
+      width: min(100%, 24rem);
+      aspect-ratio: 1;
+      border: 1px solid var(--rule);
+      background: #fff8ec;
+      box-shadow: .5rem .5rem 0 #e8d9c7;
+    }
+    .mark img { width: 77%; }
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      margin-bottom: .8rem;
+    }
+    .section-label::after {
+      content: "";
+      flex: 1;
+      border-top: 1px solid var(--rule);
+    }
+    .game {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .game img { width: 100%; height: 100%; object-fit: cover; }
+    .game-copy { align-self: center; padding: clamp(1.5rem, 4.5vw, 3.5rem); }
+    .game .eyebrow { color: #ffa18d; }
+    .game h2 { margin-block: .35rem .75rem; font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.12; }
+    .footer { margin-top: 3rem; border-top: 1px solid var(--rule); font-size: .83rem; }
+    @media (max-width: 43rem) {
+      .wrap { width: calc(100% - 2rem); }
+      .hero, .game { grid-template-columns: 1fr; }
+      .mark { justify-self: start; width: min(100% - .5rem, 18rem); }
+      .game img { height: auto; }
+      .footer { margin-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header wrap">
+    <a class="brand" href="./" lang="en">DAETZ STUDIO</a>
+    <nav class="navigation" aria-label="主导航">
+      <a href="#studio">工作室</a>
+      <a href="#games">游戏作品</a>
+    </nav>
+  </header>
+  <main class="wrap">
+    <section class="hero" id="studio" aria-labelledby="studio-title">
+      <div>
+        <p class="eyebrow">独立游戏工作室</p>
+        <h1 id="studio-title" lang="en"><span>DAETZ</span><span>STUDIO</span></h1>
+        <p class="studio-name">大鹅同志工作室</p>
+        <p class="intro">我们喜欢从熟悉的玩法出发，做一些容易上手、玩久了还能发现新招的游戏。</p>
+      </div>
+      <figure class="mark">
+        <img src="./assets/daetz-studio.png" width="512" height="512" alt="一只微笑的白鹅，下方是 DAETZ STUDIO 字标">
+      </figure>
+    </section>
+    <section id="games" aria-labelledby="game-title">
+      <p class="eyebrow section-label">游戏作品</p>
+      <article class="game">
+        <img src="./assets/bounce-cover.jpg" width="1400" height="933" alt="一颗拖着朱红尾迹的弹珠击碎漫画风格的砖块">
+        <div class="game-copy">
+          <p class="eyebrow">弹珠反弹 · 肉鸽打砖块</p>
+          <h2 id="game-title">墨弹连击</h2>
+          <p>借墙反弹，让一串弹珠在黑白漫画风的关卡里打出连击。用每局获得的增益调整打法，试试同一面墙还能打出什么新花样。</p>
+        </div>
+      </article>
+    </section>
+  </main>
+  <footer class="footer wrap">
+    <span lang="en">DAETZ STUDIO</span>
+    <span>大鹅同志工作室</span>
+  </footer>
+</body>
+</html>
