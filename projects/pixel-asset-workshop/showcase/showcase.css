@@ -46,3 +46,62 @@ pre{margin:12px 0 0;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;fo
 .page-links [rel="next"]{margin-left:auto}
 .section > p{margin-top:12px}
 @media print{.crumbs,.page-links{display:none}}
+
+.home-top{align-items:center;gap:22px;padding-inline:max(22px,calc((100vw - 1232px)/2))}
+.home-top .brand{flex-shrink:0}
+.home-top nav{display:flex;flex-wrap:wrap;gap:6px 22px;justify-content:flex-end}
+.home-shell{max-width:1280px;margin:auto;padding:58px 24px 0}
+.home-hero{display:grid;grid-template-columns:minmax(0,.87fr) minmax(0,1.13fr);align-items:center;gap:clamp(24px,4vw,58px)}
+.hero-copy h1{font-size:clamp(46px,6.3vw,100px);margin:0 0 22px}
+.hero-copy p{max-width:40ch;color:var(--ha-muted);font-size:clamp(16px,1.5vw,20px)}
+.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.button{display:inline-block;padding:9px 14px;border:1px solid var(--ha-accent);border-radius:4px;font-size:14px;font-weight:650;text-decoration:none}
+.button:hover{background:var(--ha-surface)}
+.button.primary{background:var(--ha-accent);color:white}
+.button.primary:hover{background:#194631}
+.hero-capture .motion{height:auto}
+.batch-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:28px 0 0;border-block:1px solid var(--ha-rule);background:var(--ha-surface)}
+.batch-stats div{padding:12px 24px}
+.batch-stats div + div{border-left:1px solid var(--ha-rule)}
+.batch-stats dt{font:clamp(29px,4vw,50px)/1.05 "Instrument Serif",Georgia,serif;color:var(--ha-accent)}
+.batch-stats dd{margin:5px 0 0;font-size:14px;color:var(--ha-muted)}
+.section-copy{max-width:70ch;color:var(--ha-muted)}
+.workflow-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+.workflow-card{border:1px solid var(--ha-rule);background:var(--ha-surface)}
+.workflow-card img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;background:#edf1ec;border-bottom:1px solid var(--ha-rule)}
+.workflow-card > div{padding:15px}
+.workflow-card p,.feature-split p{color:var(--ha-muted)}
+.workflow-card a,.home-shell .actions a{font-weight:650}
+.export-feature{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:16px;margin-top:20px}
+.asset-preview{display:grid;place-items:center;min-width:0;min-height:165px;height:100%;padding:10px;border:1px solid var(--ha-rule);background:repeating-conic-gradient(#f0f3ef 0% 25%,white 0% 50%) 0 0/20px 20px}
+.asset-preview img{display:block;max-width:100%;height:auto}
+.export-feature figure,.export-pair figure{display:grid;grid-template-rows:1fr auto;min-width:0}
+.export-feature + .actions{margin-top:10px}
+.export-list{display:grid;gap:18px;margin-top:20px}
+.export-card{padding:15px;border:1px solid var(--ha-rule)}
+.export-pair{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,1fr);gap:12px}
+.export-card .asset-preview{min-height:105px}
+.feature-split{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(20px,4vw,50px);align-items:center}
+.home-footer{display:flex;flex-wrap:wrap;gap:8px 22px;padding:20px 0 28px;margin-top:40px;border-top:1px solid var(--ha-rule);font-size:14px}
+@media(max-width:850px){
+  .home-shell{padding-top:36px}
+  .home-hero{gap:20px}
+  .hero-copy h1{font-size:clamp(42px,7vw,66px)}
+}
+@media(max-width:700px){
+  .home-hero,.feature-split{grid-template-columns:1fr}
+  .workflow-grid{grid-template-columns:1fr}
+  .workflow-card{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr)}
+  .workflow-card img{height:100%;border:0;border-right:1px solid var(--ha-rule)}
+  .export-feature,.export-pair{grid-template-columns:minmax(0,1fr) minmax(0,.65fr)}
+}
+@media(max-width:480px){
+  .home-shell{padding-inline:15px}
+  .home-top{align-items:flex-start;flex-direction:column;gap:6px;padding-inline:15px}
+  .home-top nav{justify-content:flex-start;gap:8px 14px}
+  .batch-stats div{padding:10px}
+  .batch-stats dd{font-size:12px}
+  .export-feature,.export-pair,.workflow-card{grid-template-columns:1fr}
+  .workflow-card img{height:auto;border:0;border-bottom:1px solid var(--ha-rule)}
+  .asset-preview{min-height:100px}
+}
