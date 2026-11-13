@@ -65,7 +65,7 @@
 .hero-profile small { display: block; color: var(--dim); font-size: .83rem; }
 
 .portfolio .hero h1 {
-  font-size: clamp(2.65rem, 4.75vw, 4.6rem);
+  font-size: clamp(2.05rem, 4vw, 3.65rem);
   line-height: 1.09;
   letter-spacing: -.065em;
   font-weight: 700;
@@ -82,35 +82,52 @@
 .portfolio .hero .btn-ghost:hover { background: var(--bg-2); }
 .portfolio .hero .btn-ghost::after { content: none; }
 
-.hero-demo { min-width: 0; }
-.hero-demo video {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 880 / 560;
-  border-radius: 12px;
-  background: #192719;
-}
-.hero-demo figcaption { margin-top: 9px; color: var(--dim); font-size: .79rem; }
-.hero-demo figcaption a { text-decoration: underline; text-underline-offset: .2em; }
-
-.workflow-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
-.workflow-grid article {
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
+.hero-focus {
+  padding: clamp(22px, 3vw, 38px);
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--card);
 }
-.workflow-grid img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: contain; background: #202327; }
-.workflow-grid .sprite-sheet { padding: 12px; background: #d8ddd2; }
-.workflow-grid article > div { display: grid; gap: 8px; padding: 17px 20px; flex: 1; }
-.workflow-grid h3 { font-size: 1.15rem; }
-.workflow-grid p { color: var(--dim); font-size: .9rem; }
-.workflow-grid a { align-self: end; font-size: .86rem; text-decoration: underline; text-underline-offset: .2em; }
-.portfolio #workflow { padding-bottom: 36px; }
-.portfolio #workflow + .stats { margin-top: 0; padding: 20px 0; gap: 14px 0; }
+.portfolio .hero-focus h2 { font-size: 1.35rem; }
+.hero-focus dl > div { padding: 12px 0; border-top: 1px solid var(--line); }
+.hero-focus dl > div:last-child { padding-bottom: 0; }
+.hero-focus dt { color: var(--accent); font-weight: 700; }
+.hero-focus dd { color: var(--dim); font-size: .92rem; }
+
+.case-list { display: grid; gap: 14px; }
+.case-study {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(18px, 3vw, 36px);
+  padding: clamp(18px, 3vw, 34px);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--card);
+}
+.case-copy:only-child { grid-column: 1 / -1; }
+.case-copy:only-child dl { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.case-category { color: var(--accent); font-size: .8rem; font-weight: 600; }
+.case-copy h3 { font-size: clamp(1.35rem, 2.3vw, 2rem); line-height: 1.25; margin: 5px 0 16px; }
+.case-copy h3 a { color: var(--text); }
+.case-copy h3 a:hover { color: var(--accent); }
+.case-copy dl { display: grid; gap: 10px; margin-bottom: 14px; }
+.case-copy dl > div { display: grid; grid-template-columns: 4.5em minmax(0, 1fr); gap: 10px; font-size: .92rem; }
+.case-copy:only-child dl > div { grid-template-columns: 1fr; gap: 2px; }
+.case-copy dt { font-weight: 700; }
+.case-copy dd { color: var(--dim); }
+.case-study figure { min-width: 0; }
+.case-study figure img, .case-study figure video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.case-study figcaption { margin-top: 6px; color: var(--dim); font-size: .77rem; }
+.case-compact { grid-template-columns: minmax(0, 1fr) minmax(0, 18rem); }
+.case-compact .case-copy h3 { font-size: 1.3rem; }
+.portfolio #projects + .stats { margin-top: 0; padding: 20px 0; gap: 14px 0; }
 
 .portfolio .stat .lbl { font-size: .72rem; letter-spacing: .03em; }
 .portfolio .stat .num { font-size: clamp(1.35rem, 2.5vw, 2.1rem); letter-spacing: -.04em; }
@@ -191,16 +208,19 @@
 @media (max-width: 720px) {
   .portfolio .nav a:not(.brand) { display: none; }
   .portfolio #menuBtn { display: grid; }
-  .portfolio .hero { grid-template-columns: 1fr; }
-  .portfolio .hero h1 { font-size: clamp(2.35rem, 8.6vw, 4rem); }
-  .portfolio #workflow + .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .portfolio .hero, .case-study { grid-template-columns: 1fr; }
+  .case-copy:only-child dl { grid-template-columns: 1fr; }
+  .case-copy:only-child dl > div { grid-template-columns: 4.5em minmax(0, 1fr); gap: 10px; }
+  .case-compact figure { max-width: 18rem; }
+  .portfolio .hero h1 { font-size: clamp(1.95rem, 7.8vw, 3.3rem); }
+  .portfolio #projects + .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .portfolio .stat { padding: 0 9px; border: 0; }
   .portfolio .stat:nth-child(3n+1) { padding-left: 0; }
   .portfolio .stat:not(:nth-child(3n+1)) { border-left: 1px solid var(--line); }
 }
 
 @media (max-width: 540px) {
-  .portfolio .grid, .portfolio .blog-grid, .portfolio .stack-groups, .workflow-grid { grid-template-columns: 1fr; }
+  .portfolio .grid, .portfolio .blog-grid, .portfolio .stack-groups { grid-template-columns: 1fr; }
   .portfolio .contact { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .portfolio .stat .lbl { font-size: .65rem; }
 }
