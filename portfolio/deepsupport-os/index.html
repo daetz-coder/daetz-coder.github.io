@@ -34,15 +34,12 @@
     <div class="source-links"><a href="https://github.com/daetz-coder/DeepSupport-OS">GitHub 源码 ↗</a><a href="#quickstart">本地运行</a></div>
   </header>
   <div class="showcase-preview">
-    <section class="scenario" aria-labelledby="scenario-title">
-      <h2 id="scenario-title">工单场景 · 员工无法登录 Outlook</h2>
-      <p>基于仓库支持的查询、排障和审批流程。</p>
-      <ol>
-        <li><strong>核对账号与工单</strong><span>查询账号状态和已有工单，避免重复创建。</span></li>
-        <li><strong>按 SOP 排障</strong><span>根据查询结果调用相应的 Skill，确定下一步。</span></li>
-        <li><strong>提交写操作审批</strong><span>如果需要重置密码，等人工批准后再执行。</span></li>
-      </ol>
-    </section>
+    <figure id="architecture" class="project-evidence">
+      <a href="/assets/images/deepsupport-architecture.webp">
+        <img src="/assets/images/deepsupport-architecture.webp" width="1440" height="960" alt="DeepSupport OS 架构图，包含客户端、API、Agent Runtime、Skills、MCP、数据和评估">
+      </a>
+      <figcaption>源码仓库提供的架构图。点击查看大图。</figcaption>
+    </figure>
     <aside class="project-facts" aria-label="项目信息">
       <dl><dt>方向</dt><dd>企业 IT 支持</dd><dt>技术栈</dt><dd><ul class="technology" aria-label="技术栈"><li>Vue3</li><li>LangGraph</li><li>MCP</li><li>RAG</li></ul></dd></dl>
     </aside>
@@ -58,18 +55,17 @@
       <p>收到 Outlook、Teams 等问题后，Agent 先查账号和工单，再调用对应的 SOP Skill 排障。LangGraph 负责任务编排，Subagents 分担检索等子任务。</p>
           <p>创建、升级或关闭工单，以及重置密码等写操作，都需要先通过人工审批。</p>
     </section>
-    <section class="chapter" id="architecture">
-      <h2>系统架构</h2>
-      <figure class="project-evidence">
-        <a href="/assets/images/deepsupport-architecture.webp">
-          <img src="/assets/images/deepsupport-architecture.webp" width="1440" height="960" loading="lazy" alt="DeepSupport OS 架构图，包含客户端、API、Agent Runtime、Skills、MCP、数据和评估">
-        </a>
-        <figcaption>源码仓库提供的架构图。点击查看大图。</figcaption>
-      </figure>
-    </section>
     <section class="chapter" id="result">
       <h2>工单如何走完一轮</h2>
-      <p>工单处理可以从规划和执行走到审批与评测，操作过程可查看。</p>
+      <div class="scenario">
+        <h3>工单场景 · 员工无法登录 Outlook</h3>
+        <p>基于仓库支持的查询、排障和审批流程。</p>
+        <ol>
+          <li><strong>核对账号与工单</strong><span>查询账号状态和已有工单，避免重复创建。</span></li>
+          <li><strong>按 SOP 排障</strong><span>根据查询结果调用相应的 Skill，确定下一步。</span></li>
+          <li><strong>提交写操作审批</strong><span>如果需要重置密码，等人工批准后再执行。</span></li>
+        </ol>
+      </div>
     </section>
     <section class="chapter" id="quickstart">
       <h2>本地运行</h2>
