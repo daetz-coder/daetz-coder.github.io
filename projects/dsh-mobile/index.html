@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#10151d">
-<meta name="description" content="把 DeepSeek Harness 装进口袋：扫码配对、状态通知、桌面远程控制。">
+<meta name="theme-color" content="#fafafa">
+<meta name="description" content="从 Android 设备扫码连接桌面 DeepSeek Harness，查看运行状态并继续操作会话。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="DSH-Mobile · daetz 项目仓库">
-<meta property="og:description" content="把 DeepSeek Harness 装进口袋：扫码配对、状态通知、桌面远程控制。">
+<meta property="og:title" content="DSH Mobile · daetz 项目仓库">
+<meta property="og:description" content="从 Android 设备扫码连接桌面 DeepSeek Harness，查看运行状态并继续操作会话。">
 <meta property="og:url" content="https://daetz-coder.github.io/projects/dsh-mobile/">
-<title>DSH-Mobile · daetz 项目仓库</title>
+<title>DSH Mobile · daetz 项目仓库</title>
 <link rel="canonical" href="https://daetz-coder.github.io/projects/dsh-mobile/">
 <link rel="icon" href="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=64">
 <link rel="stylesheet" href="/assets/css/repository.css">
@@ -26,15 +26,23 @@
     </nav>
   </div>
 </header>
-<main class="wrap reader" id="content" tabindex="-1">
+<main class="wrap reader showcase-reader" id="content" tabindex="-1">
   <nav class="breadcrumbs" aria-label="面包屑"><a href="/#projects">全部项目</a><span aria-hidden="true">/</span><a href="/?category=dsh#projects">Harness 插件</a></nav>
   <header class="project-heading">
-    <h1>DSH-Mobile</h1>
-    <p>把 DeepSeek Harness 装进口袋：扫码配对、状态通知、桌面远程控制。</p>
-    <ul class="technology" aria-label="技术栈"><li>Android</li><li>Capacitor</li><li>Remote</li></ul>
-    <div class="source-links"><a href="https://daetz-coder.github.io/DSH-Mobile/">外部 ↗</a><a href="https://github.com/daetz-coder/DSH-Mobile">GitHub 源码 ↗</a></div>
+    <h1>DSH Mobile</h1>
+    <p>从 Android 设备扫码连接桌面 DeepSeek Harness，查看运行状态并继续操作会话。</p>
+    <div class="source-links"><a href="https://github.com/daetz-coder/DSH-Mobile">GitHub 源码 ↗</a><a href="https://github.com/daetz-coder/DSH-Mobile/releases">下载 APK ↗</a><a href="/portfolio/dsh-multi-chat/">DSH Multi Chat</a></div>
   </header>
-  <nav class="chapter-nav" aria-label="本页章节"><a href="#overview">项目概览</a><a href="#features">实现要点</a><a href="#related">相关项目</a><a href="#demo">运行资料</a></nav>
+  <div class="showcase-preview">
+    <figure class="project-evidence phone-evidence">
+      <a href="/assets/images/dsh-mobile-chat.webp"><img src="/assets/images/dsh-mobile-chat.webp" width="560" height="1100" alt="DSH Mobile 仓库里的 Android 会话界面"></a>
+      <figcaption>Android 会话界面，截图来自 DSH Mobile 仓库。</figcaption>
+    </figure>
+    <aside class="project-facts" aria-label="项目信息">
+      <dl><dt>方向</dt><dd>Harness 工具</dd><dt>技术栈</dt><dd><ul class="technology" aria-label="技术栈"><li>Android</li><li>Capacitor</li><li>Remote</li></ul></dd></dl>
+    </aside>
+  </div>
+  <nav class="chapter-nav" aria-label="本页章节"><a href="#overview">项目概览</a><a href="#features">实现要点</a><a href="#related">相关项目</a><a href="#demo">安装与配对</a></nav>
   <article class="project-body">
     <section class="chapter" id="overview">
       <h2>项目概览</h2>
@@ -54,8 +62,13 @@
       <ul class="inline-links"><li><a href="/portfolio/dsh-multi-chat/">dsh-multi-chat</a></li><li><a href="/projects/agentlink/">AgentLink</a></li><li><a href="/portfolio/deepsupport-os/">DeepSupport-OS</a></li></ul>
     </section>
     <section class="chapter" id="demo">
-      <h2>运行资料</h2>
-      <p><a href="https://daetz-coder.github.io/DSH-Mobile/">外部 ↗</a> · <a href="https://github.com/daetz-coder/DSH-Mobile">GitHub 源码 ↗</a></p>
+      <h2>安装与配对</h2>
+      <ol>
+        <li>按项目文档为桌面 DeepSeek Harness 安装 dsh-pocket 和 dsh-web-mobile，再启动 <code>dsh web</code>。</li>
+        <li>从 Releases 下载并安装 Android APK。</li>
+        <li>在桌面打开 Phone access，扫描二维码并输入配对 PIN。</li>
+      </ol>
+      <p><a href="https://daetz-coder.github.io/DSH-Mobile/">查看项目官网 ↗</a></p>
     </section>
   </article>
   <p class="back-index"><a href="/#projects">← 返回项目索引</a></p>

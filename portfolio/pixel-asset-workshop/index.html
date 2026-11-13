@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#10151d">
-<meta name="description" content="将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。">
+<meta name="theme-color" content="#fafafa">
+<meta name="description" content="从像素参考图制作角色，把多个动作放进同一段视频，导出透明 PNG 帧序列供 SpriteFrame 或 Godot 检查。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Pixel Asset Workshop · daetz 项目仓库">
-<meta property="og:description" content="将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。">
+<meta property="og:description" content="从像素参考图制作角色，把多个动作放进同一段视频，导出透明 PNG 帧序列供 SpriteFrame 或 Godot 检查。">
 <meta property="og:url" content="https://daetz-coder.github.io/portfolio/pixel-asset-workshop/">
 <title>Pixel Asset Workshop · daetz 项目仓库</title>
 <link rel="canonical" href="https://daetz-coder.github.io/portfolio/pixel-asset-workshop/">
@@ -26,14 +26,27 @@
     </nav>
   </div>
 </header>
-<main class="wrap reader" id="content" tabindex="-1">
+<main class="wrap reader showcase-reader" id="content" tabindex="-1">
   <nav class="breadcrumbs" aria-label="面包屑"><a href="/#projects">全部项目</a><span aria-hidden="true">/</span><a href="/?category=tool#projects">工具与应用</a></nav>
   <header class="project-heading">
     <h1>Pixel Asset Workshop</h1>
-    <p>将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。</p>
-    <ul class="technology" aria-label="技术栈"><li>Pixel Art</li><li>SpriteFrame</li><li>Godot</li></ul>
-    <div class="source-links"><a href="/projects/pixel-asset-workshop/index.zh.html">查看案例 ↗</a></div>
+    <p>从像素参考图制作角色，把多个动作放进同一段视频，导出透明 PNG 帧序列供 SpriteFrame 或 Godot 检查。</p>
+    <div class="source-links"><a href="https://github.com/daetz-coder/pixel-asset-workshop">GitHub 源码 ↗</a><a href="/projects/pixel-asset-workshop/index.zh.html">完整中文案例</a></div>
   </header>
+  <div class="showcase-preview">
+    <figure class="project-evidence video-evidence">
+      <video controls preload="none" playsinline width="880" height="560"
+            aria-label="Godot 训练场实机录像"
+            src="/projects/pixel-asset-workshop/examples/tiny-swords/preview/training-ground.mp4"
+            poster="/projects/pixel-asset-workshop/examples/tiny-swords/preview/training-ground.png">
+            <a href="/projects/pixel-asset-workshop/examples/tiny-swords/preview/training-ground.mp4">播放 Godot 训练场录像</a>
+          </video>
+      <figcaption>Godot 训练场实录。上排为 Tiny Swords 原版兵种，下排为本次生成兵种。</figcaption>
+    </figure>
+    <aside class="project-facts" aria-label="项目信息">
+      <dl><dt>方向</dt><dd>游戏资产工具</dd><dt>技术栈</dt><dd><ul class="technology" aria-label="技术栈"><li>Pixel Art</li><li>SpriteFrame</li><li>Godot</li></ul></dd></dl>
+    </aside>
+  </div>
   <nav class="chapter-nav" aria-label="本页章节"><a href="#overview">一条视频里的六个兵种</a><a href="#implementation">用 SpriteFrame 拆帧与筛帧</a><a href="#result">Godot 训练场实录</a><a href="#quickstart">复现这批素材</a></nav>
   <article class="project-body">
     <section class="chapter" id="overview">
@@ -47,15 +60,6 @@
     <section class="chapter" id="result">
       <h2>Godot 训练场实录</h2>
       <p>导出透明精灵图。Godot 实机录屏中，上排是 Tiny Swords 原版兵种，下排是本次生成兵种。</p>
-          <figure class="doc-compact-media">
-          <video controls preload="none" playsinline width="880" height="560"
-            aria-label="Godot 训练场实机录像"
-            src="/projects/pixel-asset-workshop/examples/tiny-swords/preview/training-ground.mp4"
-            poster="/projects/pixel-asset-workshop/examples/tiny-swords/preview/training-ground.png">
-            <a href="/projects/pixel-asset-workshop/examples/tiny-swords/preview/training-ground.mp4">播放 Godot 训练场录像</a>
-          </video>
-
-        </figure>
       <p class="credit">Tiny Swords 原版素材来自 <a href="https://pixelfrog-assets.itch.io/tiny-swords">Pixel Frog</a>。</p>
     </section>
     <section class="chapter" id="quickstart">

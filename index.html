@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#10151d">
+<meta name="theme-color" content="#fafafa">
 <meta name="description" content="daetz 的项目仓库，收录 Agent、RAG、运行时评估、开源工具和研究复现。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="daetz / 项目仓库">
@@ -27,39 +27,37 @@
     </nav>
   </div>
 </header>
-<main class="wrap repository" id="content" tabindex="-1">
+<main class="wrap repository showcase-home" id="content" tabindex="-1">
   <header class="repo-heading" id="top">
     <div><h1>项目仓库</h1><p>Agent 系统、检索与评估，以及开源工具和研究复现。</p></div>
     <a class="index-jump" href="#projects">浏览项目索引 <span aria-hidden="true">↓</span></a>
   </header>
 
-  <section class="spotlight" aria-labelledby="spotlight-title">
-    <h2 id="spotlight-title">代表项目</h2>
-    <div class="spotlight-layout">
-      <a class="spotlight-rag" href="/portfolio/raglab/">
-        <div class="spotlight-image"><img src="/assets/images/raglab.webp" width="1024" height="571" alt="RAGLab 知识问答界面与引用依据栏" fetchpriority="high"></div>
-        <div class="spotlight-copy">
-          <span class="project-type">Hybrid RAG</span>
-          <h3>RAGLab</h3>
-          <p>从中文企业报告检索证据，回答附原文引用。</p>
-          <span class="spotlight-arrow" aria-hidden="true">↗</span>
-        </div>
-      </a>
-      <div class="spotlight-stack">
-        <a class="spotlight-case" href="/portfolio/deepsupport-os/">
-          <span class="project-type">Agent Harness</span>
-          <h3>DeepSupport-OS</h3>
-          <p>把 Microsoft 365 工单交给 Agent 排障，写操作交由人工审批。</p>
-          <span class="spotlight-arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="spotlight-case" href="/portfolio/agent-eval-platform/">
-          <span class="project-type">LLM-as-Judge</span>
-          <h3>Agent 运行时评估平台</h3>
-          <p>用执行轨迹评估规划、工具调用和检索，覆盖 6 个维度、20 项指标。</p>
-          <span class="spotlight-arrow" aria-hidden="true">↗</span>
-        </a>
-      </div>
+  <section class="featured" aria-labelledby="featured-title">
+    <h2 id="featured-title">AI Agent 项目</h2>
+    <div class="featured-projects">
+      <article class="featured-entry">
+        <h3><a href="/portfolio/deepsupport-os/">DeepSupport OS <span aria-hidden="true">↗</span></a></h3>
+        <p>处理 Microsoft 365 工单，规划排障任务，关键写操作经过人工审批。</p>
+      </article>
+      <article class="featured-entry">
+        <h3><a href="/portfolio/raglab/">RAGLab <span aria-hidden="true">↗</span></a></h3>
+        <p>对中文企业报告做混合检索，提供带引用的回答和检索评估看板。</p>
+      </article>
+      <article class="featured-entry">
+        <h3><a href="/portfolio/agent-eval-platform/">Agent Runtime Evaluation Platform <span aria-hidden="true">↗</span></a></h3>
+        <p>从执行轨迹评估 Agent 如何规划、调用工具、检索和调整计划。</p>
+      </article>
+      <article class="featured-entry">
+        <h3><a href="/portfolio/dsh-multi-chat/">DSH Multi Chat</a><span class="entry-divider"> / </span><a href="/projects/dsh-mobile/">DSH Mobile <span aria-hidden="true">↗</span></a></h3>
+        <p>在桌面并排操作多个 DeepSeek Harness 会话，也能从 Android 连接。</p>
+      </article>
     </div>
+  </section>
+  <section class="featured-tool" aria-labelledby="tools-title">
+    <h2 id="tools-title">游戏资产工具</h2>
+    <a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop <span aria-hidden="true">↗</span></a>
+    <p>把多角色视频拆成透明 PNG 帧序列，在 SpriteFrame 和 Godot 中检查。</p>
   </section>
 
   <section class="index-section" id="projects" aria-labelledby="index-title">
@@ -86,7 +84,7 @@
       <ul class="repo-list">
       <li class="repo-row" data-category="agent">
         <a class="repo-main" href="/portfolio/deepsupport-os/">
-          <span class="repo-name">DeepSupport-OS</span>
+          <span class="repo-name">DeepSupport OS</span>
           <span class="repo-desc">Microsoft 365 工单排障，包含任务编排、人工审批和自动化评测。</span>
           <span class="repo-category">Agent 系统</span>
           <span class="repo-tech">Vue3 · LangGraph · MCP · RAG</span>
@@ -140,7 +138,7 @@
       </li>
       <li class="repo-row" data-category="dsh">
         <a class="repo-main" href="/portfolio/dsh-multi-chat/">
-          <span class="repo-name">dsh-multi-chat</span>
+          <span class="repo-name">DSH Multi Chat</span>
           <span class="repo-desc">DeepSeek Harness 多窗口墙插件：并排监控 N 个 Agent 实例 + 认证局域网网关。</span>
           <span class="repo-category">Harness 插件</span>
           <span class="repo-tech">TypeScript · React · Cordis · npm</span>
@@ -149,7 +147,7 @@
       </li>
       <li class="repo-row" data-category="dsh">
         <a class="repo-main" href="/projects/dsh-mobile/">
-          <span class="repo-name">DSH-Mobile</span>
+          <span class="repo-name">DSH Mobile</span>
           <span class="repo-desc">把 DeepSeek Harness 装进口袋：扫码配对、状态通知、桌面远程控制。</span>
           <span class="repo-category">Harness 插件</span>
           <span class="repo-tech">Android · Capacitor · Remote</span>

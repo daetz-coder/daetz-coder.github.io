@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#10151d">
-<meta name="description" content="中文企业公开报告 Hybrid RAG：Docling · Qdrant 稠密/稀疏检索 · 带引用生成与拒答。">
+<meta name="theme-color" content="#fafafa">
+<meta name="description" content="在中文企业报告中做混合检索，给出带原文引用的回答，并在看板中评估检索效果。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="RAGLab · daetz 项目仓库">
-<meta property="og:description" content="中文企业公开报告 Hybrid RAG：Docling · Qdrant 稠密/稀疏检索 · 带引用生成与拒答。">
+<meta property="og:description" content="在中文企业报告中做混合检索，给出带原文引用的回答，并在看板中评估检索效果。">
 <meta property="og:url" content="https://daetz-coder.github.io/portfolio/raglab/">
 <title>RAGLab · daetz 项目仓库</title>
 <link rel="canonical" href="https://daetz-coder.github.io/portfolio/raglab/">
@@ -26,14 +26,22 @@
     </nav>
   </div>
 </header>
-<main class="wrap reader" id="content" tabindex="-1">
+<main class="wrap reader showcase-reader" id="content" tabindex="-1">
   <nav class="breadcrumbs" aria-label="面包屑"><a href="/#projects">全部项目</a><span aria-hidden="true">/</span><a href="/?category=rag#projects">知识检索</a></nav>
   <header class="project-heading">
     <h1>RAGLab</h1>
-    <p>中文企业公开报告 Hybrid RAG：Docling · Qdrant 稠密/稀疏检索 · 带引用生成与拒答。</p>
-    <ul class="technology" aria-label="技术栈"><li>FastAPI</li><li>Qdrant</li><li>Docling</li><li>Vue3</li></ul>
-    <div class="source-links"><a href="https://github.com/daetz-coder/RAGLab">GitHub 源码 ↗</a></div>
+    <p>在中文企业报告中做混合检索，给出带原文引用的回答，并在看板中评估检索效果。</p>
+    <div class="source-links"><a href="https://github.com/daetz-coder/RAGLab">GitHub 源码 ↗</a><a href="#quickstart">本地运行</a></div>
   </header>
+  <div class="showcase-preview">
+    <figure class="project-evidence">
+      <a href="/assets/images/raglab.webp"><img src="/assets/images/raglab.webp" width="1024" height="571" alt="RAGLab 问答页面，右侧显示回答对应的原文引用" fetchpriority="high"></a>
+      <figcaption>RAGLab 问答实拍。右侧是回答使用的引用依据。</figcaption>
+    </figure>
+    <aside class="project-facts" aria-label="项目信息">
+      <dl><dt>方向</dt><dd>知识检索</dd><dt>技术栈</dt><dd><ul class="technology" aria-label="技术栈"><li>FastAPI</li><li>Qdrant</li><li>Docling</li><li>Vue3</li></ul></dd></dl>
+    </aside>
+  </div>
   <nav class="chapter-nav" aria-label="本页章节"><a href="#overview">中文企业报告问答</a><a href="#implementation">PDF 解析、双路召回与重排</a><a href="#result">引用依据与拒答</a><a href="#quickstart">用公开报告复现</a></nav>
   <article class="project-body">
     <section class="chapter" id="overview">
@@ -48,9 +56,6 @@
     <section class="chapter" id="result">
       <h2>引用依据与拒答</h2>
       <p>回答可以回查原文引用，证据不足时会拒答。检索质量可以在评测看板里检查。</p>
-          <figure>
-          <a href="/assets/images/raglab.webp"><img src="/assets/images/raglab.webp" width="1024" height="571" loading="lazy" alt="RAGLab 的报告问答页面"></a>
-        </figure>
     </section>
     <section class="chapter" id="quickstart">
       <h2>用公开报告复现</h2>

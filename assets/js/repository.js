@@ -4,7 +4,7 @@ const filters = [...filterGroup.querySelectorAll('[data-filter]')];
 const rows = [...document.querySelectorAll('.repo-row')].map(row => ({
   element: row,
   category: row.dataset.category,
-  text: row.textContent.toLowerCase(),
+  text: searchText(row.textContent),
 }));
 const resultCount = document.querySelector('#result-count');
 const noResults = document.querySelector('.no-results');
@@ -14,8 +14,12 @@ let category = filters.some(button => button.dataset.filter === requestedCategor
   ? requestedCategory
   : 'all';
 
+function searchText(value) {
+  return value.toLowerCase().replace(/[-_]+/g, ' ');
+}
+
 function render() {
-  const terms = search.value.trim().toLowerCase().split(/\s+/).filter(Boolean);
+  const terms = searchText(search.value).trim().split(/\s+/).filter(Boolean);
   let count = 0;
 
   for (const row of rows) {
