@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>daetz 主页</title>
-<meta name="description" content="daetz 主页 · Agent 工程与技术博客。Agent Harness、LangGraph、Hybrid RAG、LLM-as-Judge 评估、DSH 生态插件，兼有网络入侵检测、调制信号识别、Few-Shot 学习与 SLAM 实践。托管于 GitHub Pages 与 123.57.64.231。">
+<meta name="description" content="daetz 的项目与技术笔记。查看 Pixel Asset Workshop 如何将一条视频拆成透明精灵帧，并在 Godot 中验证，或浏览 Agent、RAG 与开源工具项目。">
 <meta name="author" content="daetz">
 <meta property="og:type" content="profile">
 <meta property="og:title" content="daetz 主页">
-<meta property="og:description" content="daetz 主页 · Agent 工程与技术博客">
+<meta property="og:description" content="daetz 的项目与技术笔记 · 像素素材工坊、Agent 与 RAG">
 <meta property="og:url" content="https://daetz-coder.github.io/">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/77006398?v=4">
 <meta name="theme-color" content="#f7f6f1">
@@ -68,20 +68,63 @@
   <!-- ===== Hero ===== -->
   <header class="hero" id="about" tabindex="-1">
     <div class="hero-copy">
-      <div class="hero-profile"><img src="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=96" width="40" height="40" alt=""><span><strong>daetz</strong><small>Agent Engineer · 杭州</small></span></div>
-      <h1>构建 <span>AI Agent</span><br>与 RAG 工具链</h1>
-      <p class="tagline reveal d1">我做 Agent 编排、混合检索与自动化评估，关注如何把这些能力接入真实工作流。</p>
-      <div class="cta-row reveal d2">
-        <a class="btn btn-primary" href="#projects">浏览项目
-          <span class="bi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-6-6 6 6 6-6"/></svg></span>
-        </a>
-        <a class="btn btn-ghost" href="https://github.com/daetz-coder" target="_blank" rel="noopener">GitHub ↗</a>
+      <div class="hero-profile">
+        <img src="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=96" width="40" height="40" alt="">
+        <span><strong>daetz</strong><small>Agent 工程 · 游戏工具 · 杭州</small></span>
+      </div>
+      <h1>把一条视频做成<br><span>游戏精灵图</span></h1>
+      <p class="tagline">我们在 Pixel Asset Workshop 里用一条 5 秒视频制作六个兵种的动作。用 SpriteFrame 去底、筛帧并导出透明 PNG，再到 Godot 训练场里和原版兵种对照。</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="projects/pixel-asset-workshop/index.zh.html">查看完整案例 ↗</a>
+        <a class="btn btn-ghost" href="#projects">浏览其他项目 ↓</a>
       </div>
     </div>
-    <div class="hero-art" aria-hidden="true">
-      <img src="assets/images/agent-hero.webp" width="1000" height="1000" alt="" fetchpriority="high">
-    </div>
+    <figure class="hero-demo">
+      <video controls preload="none" playsinline width="880" height="560"
+        aria-label="Godot 训练场实机录像"
+        src="projects/pixel-asset-workshop/examples/tiny-swords/preview/training-ground.mp4"
+        poster="projects/pixel-asset-workshop/examples/tiny-swords/preview/training-ground.png">
+        <a href="projects/pixel-asset-workshop/examples/tiny-swords/preview/training-ground.mp4">播放 Godot 训练场录像</a>
+      </video>
+      <figcaption>Godot 4.5.1 实机录像。上排是 <a href="https://pixelfrog-assets.itch.io/tiny-swords">Pixel Frog 的 Tiny Swords 原版兵种</a>，下排是这批生成兵种。</figcaption>
+    </figure>
   </header>
+
+  <section id="workflow" aria-labelledby="workflow-title">
+    <div class="sec-head">
+      <div>
+        <h2 id="workflow-title">六个兵种怎么做出来</h2>
+        <p class="sec-sub">从 3 × 2 首帧合图到可导入游戏的精灵图，以下是同一批素材的输入、拆帧和导出结果。</p>
+      </div>
+      <a class="sec-link" href="projects/pixel-asset-workshop/index.zh.html#workflow">看完整流程 ↗</a>
+    </div>
+    <div class="workflow-grid">
+      <article>
+        <img src="projects/pixel-asset-workshop/assets/video-inputs/blue-units-3x2-reference.png" width="1280" height="720" loading="lazy" alt="六个兵种按三列两行排在洋红背景上">
+        <div>
+          <h3>合成首帧</h3>
+          <p>为六个兵种固定格位和脚底锚点，为每格指定动作，再用 Wan 生成一条视频。</p>
+          <a href="projects/pixel-asset-workshop/showcase/examples.html">查看输入素材 ↗</a>
+        </div>
+      </article>
+      <article>
+        <img src="projects/pixel-asset-workshop/examples/tiny-swords/preview/blue-squad.zh.png" width="1440" height="1040" loading="lazy" alt="SpriteFrame 工作台里的六个裁剪框">
+        <div>
+          <h3>拆帧与筛选</h3>
+          <p>在 SpriteFrame 里按格裁切、去除洋红背景，从 900 张候选帧中挑出能讲清动作的姿势。</p>
+          <a href="projects/pixel-asset-workshop/showcase/spriteframe.zh.html">查看 SpriteFrame 工作台 ↗</a>
+        </div>
+      </article>
+      <article>
+        <img class="sprite-sheet" src="projects/pixel-asset-workshop/examples/tiny-swords/preview/exports/warhammer-sheet.png" width="1380" height="344" loading="lazy" alt="战锤步兵精灵图，包含两排共十二张透明动作帧">
+        <div>
+          <h3>导出游戏素材</h3>
+          <p>战锤步兵的精灵图用了 12 张筛选后的动作帧。导出清单记录每帧的来源、裁剪框与时长。</p>
+          <a href="projects/pixel-asset-workshop/index.zh.html#exports">查看精灵图与 GIF ↗</a>
+        </div>
+      </article>
+    </div>
+  </section>
 
   <!-- ===== 实时数据条 ===== -->
   <div class="stats reveal">
@@ -102,7 +145,7 @@
       <div>
         <p class="kick reveal">Selected work</p>
         <h2 class="reveal"><span class="bar"></span>项目精选</h2>
-        <p class="sec-sub reveal d1">Agent 系统、RAG 工具链、DSH 生态插件与 AI/ML 实践，全部开源在 GitHub。</p>
+        <p class="sec-sub reveal d1">游戏工具、Agent 系统、RAG 工具链、DSH 生态插件与 AI/ML 实践。</p>
       </div>
       <a class="sec-link reveal d2" href="https://github.com/daetz-coder?tab=repositories" target="_blank" rel="noopener">全部仓库 ↗</a>
     </div>
@@ -117,16 +160,11 @@
     </div>
 
     <div class="grid" id="projGrid">
-      <article class="card project-feature reveal" data-cat="tool">
-        <div class="project-cover" aria-hidden="true">
-          <img src="projects/pixel-asset-workshop/examples/tiny-swords/preview/workflow-poster.webp" width="1280" height="720" alt="" loading="lazy">
-        </div>
-        <div class="project-feature-copy">
-          <div class="top"><h3><a href="projects/pixel-asset-workshop/">Pixel Asset Workshop</a></h3><span class="lang-chip">Python · Godot</span></div>
-          <p>将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。</p>
-          <div class="stats"><span>Pixel Art</span><span>SpriteFrame</span><span>Godot</span></div>
-          <div class="card-links"><a href="projects/pixel-asset-workshop/">作品页 ↗</a></div>
-        </div>
+      <article class="card reveal" data-cat="tool">
+        <div class="top"><h3><a href="projects/pixel-asset-workshop/">Pixel Asset Workshop</a></h3><span class="lang-chip">Python · Godot</span></div>
+        <p>将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。</p>
+        <div class="stats"><span>Pixel Art</span><span>SpriteFrame</span><span>Godot</span></div>
+        <div class="card-links"><a href="projects/pixel-asset-workshop/">作品页 ↗</a></div>
       </article>
       <article class="card reveal d1" data-cat="agent">
         <div class="top"><h3><a href="projects/deepsupport-os/">DeepSupport-OS</a></h3><span class="lang-chip">Python · Agent Harness</span></div>
