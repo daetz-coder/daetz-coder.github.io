@@ -1,143 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RAGLab · daetz 作品集</title>
-<meta name="description" content="做了一套面向中文企业公开报告的问答工具，便于从 PDF 中查证信息。">
-<meta name="author" content="daetz">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10151d">
+<meta name="description" content="中文企业公开报告 Hybrid RAG：Docling · Qdrant 稠密/稀疏检索 · 带引用生成与拒答。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="RAGLab · daetz 作品集">
-<meta property="og:description" content="做了一套面向中文企业公开报告的问答工具，便于从 PDF 中查证信息。">
+<meta property="og:title" content="RAGLab · daetz 项目仓库">
+<meta property="og:description" content="中文企业公开报告 Hybrid RAG：Docling · Qdrant 稠密/稀疏检索 · 带引用生成与拒答。">
 <meta property="og:url" content="https://daetz-coder.github.io/portfolio/raglab/">
-<meta property="og:image" content="https://avatars.githubusercontent.com/u/77006398?v=4">
-<meta name="theme-color" content="#f3f0e8">
-<link rel="icon" href="https://avatars.githubusercontent.com/u/77006398?v=4&s=64">
-<link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<script>try {
-  const theme = localStorage.getItem('daetz-theme');
-  document.documentElement.dataset.theme = theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-} catch (_) {}</script>
-<link rel="stylesheet" href="/assets/css/portfolio.css">
+<title>RAGLab · daetz 项目仓库</title>
+<link rel="canonical" href="https://daetz-coder.github.io/portfolio/raglab/">
+<link rel="icon" href="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=64">
+<link rel="stylesheet" href="/assets/css/repository.css">
 </head>
-<body class="portfolio docs">
+<body>
 <a class="skip" href="#content">跳到主要内容</a>
-<header class="nav">
-  <nav class="nav-inner" aria-label="顶部导航">
-    <a class="brand" href="/">daetz<span>.</span></a>
-    <a href="/portfolio/notes/">博客与动态</a>
-    <a href="/studio/">工作室</a>
-    <a href="https://github.com/daetz-coder">GitHub ↗</a>
-    <div class="nav-actions">
-      <button class="icon-btn" id="themeBtn" aria-label="切换主题" title="切换深浅主题">
-        <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
-        <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-      </button>
-      <button class="icon-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="打开菜单" title="作品集目录"><span>目录</span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
-  </nav>
-</header>
-<nav class="mobile-menu docs-mobile" id="mobileMenu" aria-label="移动导航" hidden>
-  <button class="mm-close" id="mmClose" aria-label="关闭菜单">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-    <div class="docs-group"><p>作品集</p>
-      <a href="/">个人首页</a>
-      <a href="/portfolio/catalog/">全部项目</a>
-    </div>
-    <div class="docs-group"><p>AI Agent 工程</p>
-      <a href="/portfolio/deepsupport-os/">DeepSupport-OS</a>
-      <a href="/portfolio/raglab/" aria-current="page">RAGLab</a>
-      <a href="/portfolio/agent-eval-platform/">Agent 运行时评估平台</a>
-      <a href="/portfolio/dsh-multi-chat/">dsh-multi-chat</a>
-    </div>
-    <div class="docs-group"><p>游戏工具</p>
-      <a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop</a>
-    </div>
-    <div class="docs-group"><p>文章与联系</p>
-      <a href="/portfolio/notes/">博客与动态</a>
-      <a href="/#contact">联系我</a>
-    </div>
-    <div class="docs-group"><a href="/studio/">工作室</a></div>
-</nav>
-
-<div class="docs-layout">
-  <aside class="docs-sidebar">
-    <a class="sidebar-identity" href="/">
-      <img src="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=88" width="44" height="44" alt="">
-      <span><strong>daetz</strong><small>AI Agent 工程作品集</small></span>
-    </a>
-    <nav aria-label="作品集侧栏">
-    <div class="docs-group"><p>作品集</p>
-      <a href="/">个人首页</a>
-      <a href="/portfolio/catalog/">全部项目</a>
-    </div>
-    <div class="docs-group"><p>AI Agent 工程</p>
-      <a href="/portfolio/deepsupport-os/">DeepSupport-OS</a>
-      <a href="/portfolio/raglab/" aria-current="page">RAGLab</a>
-      <a href="/portfolio/agent-eval-platform/">Agent 运行时评估平台</a>
-      <a href="/portfolio/dsh-multi-chat/">dsh-multi-chat</a>
-    </div>
-    <div class="docs-group"><p>游戏工具</p>
-      <a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop</a>
-    </div>
-    <div class="docs-group"><p>文章与联系</p>
-      <a href="/portfolio/notes/">博客与动态</a>
-      <a href="/#contact">联系我</a>
-    </div>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="wordmark" href="/"><span>daetz</span><span class="wordmark-slash" aria-hidden="true">/</span> 项目仓库</a>
+    <nav class="top-links" aria-label="站点导航">
+      <a href="/#projects">项目</a>
+      <a href="/portfolio/notes/">文章</a>
+      <a href="https://github.com/daetz-coder">GitHub <span aria-hidden="true">↗</span></a>
     </nav>
-  </aside>
-  <main class="docs-main" id="content" tabindex="-1">
-    <div class="doc-reader">
-      <article class="doc-article">
-        <header class="doc-intro" data-enter>
-          <p class="doc-kicker">Hybrid RAG · 引用与拒答</p>
-          <h1>RAGLab</h1>
-          <p><a href="https://github.com/daetz-coder/RAGLab">源码与运行说明 ↗</a></p>
-        </header>
-        <section id="overview">
-          <h2>做了什么</h2>
-          <p>做了一套面向中文企业公开报告的问答工具，便于从 PDF 中查证信息。</p>
-        </section>
-        <section id="implementation">
-          <h2>怎么做</h2>
-          <p>用 Docling 从 PDF 提取文本和表格。在 Qdrant 并行做语义和关键词检索，再对候选证据重排。</p>
+  </div>
+</header>
+<main class="wrap reader" id="content" tabindex="-1">
+  <nav class="breadcrumbs" aria-label="面包屑"><a href="/#projects">全部项目</a><span aria-hidden="true">/</span><a href="/?category=rag#projects">知识检索</a></nav>
+  <header class="project-heading">
+    <h1>RAGLab</h1>
+    <p>中文企业公开报告 Hybrid RAG：Docling · Qdrant 稠密/稀疏检索 · 带引用生成与拒答。</p>
+    <ul class="technology" aria-label="技术栈"><li>FastAPI</li><li>Qdrant</li><li>Docling</li><li>Vue3</li></ul>
+    <div class="source-links"><a href="https://github.com/daetz-coder/RAGLab">GitHub 源码 ↗</a></div>
+  </header>
+  <nav class="chapter-nav" aria-label="本页章节"><a href="#overview">中文企业报告问答</a><a href="#implementation">PDF 解析、双路召回与重排</a><a href="#result">引用依据与拒答</a><a href="#quickstart">用公开报告复现</a></nav>
+  <article class="project-body">
+    <section class="chapter" id="overview">
+      <h2>中文企业报告问答</h2>
+      <p>做了一套面向中文企业公开报告的问答工具，便于从 PDF 中查证信息。</p>
+    </section>
+    <section class="chapter" id="implementation">
+      <h2>PDF 解析、双路召回与重排</h2>
+      <p>用 Docling 从 PDF 提取文本和表格。在 Qdrant 并行做语义和关键词检索，再对候选证据重排。</p>
           <p>生成环节根据检索到的证据作答，并附上来源。超出语料范围的问题用于检查拒答行为。</p>
-        </section>
-        <section id="result">
-          <h2>结果</h2>
-          <p>回答可以回查原文引用，证据不足时会拒答。检索质量可以在评测看板里检查。</p>
+    </section>
+    <section class="chapter" id="result">
+      <h2>引用依据与拒答</h2>
+      <p>回答可以回查原文引用，证据不足时会拒答。检索质量可以在评测看板里检查。</p>
           <figure>
           <a href="/assets/images/raglab.webp"><img src="/assets/images/raglab.webp" width="1024" height="571" loading="lazy" alt="RAGLab 的报告问答页面"></a>
         </figure>
-        </section>
-        <section id="quickstart">
-          <h2>如何体验</h2>
-          <ol>
+    </section>
+    <section class="chapter" id="quickstart">
+      <h2>用公开报告复现</h2>
+      <ol>
             <li>按仓库的快速开始配置模型与本地环境，启动 Qdrant。</li>
             <li>准备公开 PDF，运行 <code>scripts/ingest_demo_subset.py</code> 入库。</li>
             <li>启动前后端，打开本机的 <code>http://localhost:5173</code>，用示例问题检查回答、引用页码和拒答。</li>
           </ol>
           <p><a href="https://github.com/daetz-coder/RAGLab#快速开始">完整安装命令与示例问题 ↗</a></p>
-        </section>
-        <nav class="doc-pagination" aria-label="相邻项目"><a href="/portfolio/deepsupport-os/">← DeepSupport-OS</a><a href="/portfolio/agent-eval-platform/">Agent 运行时评估平台 →</a></nav>
-      </article>
-      <nav class="doc-outline" aria-label="本页目录">
-        <p>本页目录</p>
-        <a href="#overview">做了什么</a>
-        <a href="#implementation">怎么做</a>
-        <a href="#result">结果</a>
-        <a href="#quickstart">如何体验</a>
-      </nav>
-    </div>
-  </main>
-</div>
-
-<div id="toast" role="status"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>已复制到剪贴板</span></div>
-
-<script src="/assets/js/site.js"></script>
+    </section>
+  </article>
+  <p class="back-index"><a href="/#projects">← 返回项目索引</a></p>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a href="/">daetz / 项目仓库</a>
+    <nav aria-label="站点链接"><a href="/studio/">工作室</a><a href="mailto:3446914219@qq.com">邮件</a><a href="https://github.com/daetz-coder">GitHub ↗</a></nav>
+  </div>
+</footer>
 </body>
 </html>

@@ -1,114 +1,52 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pixel Asset Workshop · daetz 作品集</title>
-<meta name="description" content="把一条视频里的六个兵种动作做成游戏素材。">
-<meta name="author" content="daetz">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10151d">
+<meta name="description" content="将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Pixel Asset Workshop · daetz 作品集">
-<meta property="og:description" content="把一条视频里的六个兵种动作做成游戏素材。">
+<meta property="og:title" content="Pixel Asset Workshop · daetz 项目仓库">
+<meta property="og:description" content="将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。">
 <meta property="og:url" content="https://daetz-coder.github.io/portfolio/pixel-asset-workshop/">
-<meta property="og:image" content="https://avatars.githubusercontent.com/u/77006398?v=4">
-<meta name="theme-color" content="#f3f0e8">
-<link rel="icon" href="https://avatars.githubusercontent.com/u/77006398?v=4&s=64">
-<link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<script>try {
-  const theme = localStorage.getItem('daetz-theme');
-  document.documentElement.dataset.theme = theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-} catch (_) {}</script>
-<link rel="stylesheet" href="/assets/css/portfolio.css">
+<title>Pixel Asset Workshop · daetz 项目仓库</title>
+<link rel="canonical" href="https://daetz-coder.github.io/portfolio/pixel-asset-workshop/">
+<link rel="icon" href="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=64">
+<link rel="stylesheet" href="/assets/css/repository.css">
 </head>
-<body class="portfolio docs">
+<body>
 <a class="skip" href="#content">跳到主要内容</a>
-<header class="nav">
-  <nav class="nav-inner" aria-label="顶部导航">
-    <a class="brand" href="/">daetz<span>.</span></a>
-    <a href="/portfolio/notes/">博客与动态</a>
-    <a href="/studio/">工作室</a>
-    <a href="https://github.com/daetz-coder">GitHub ↗</a>
-    <div class="nav-actions">
-      <button class="icon-btn" id="themeBtn" aria-label="切换主题" title="切换深浅主题">
-        <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
-        <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
-      </button>
-      <button class="icon-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="打开菜单" title="作品集目录"><span>目录</span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-    </div>
-  </nav>
-</header>
-<nav class="mobile-menu docs-mobile" id="mobileMenu" aria-label="移动导航" hidden>
-  <button class="mm-close" id="mmClose" aria-label="关闭菜单">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M18 6 6 18M6 6l12 12"/></svg>
-      </button>
-    <div class="docs-group"><p>作品集</p>
-      <a href="/">个人首页</a>
-      <a href="/portfolio/catalog/">全部项目</a>
-    </div>
-    <div class="docs-group"><p>AI Agent 工程</p>
-      <a href="/portfolio/deepsupport-os/">DeepSupport-OS</a>
-      <a href="/portfolio/raglab/">RAGLab</a>
-      <a href="/portfolio/agent-eval-platform/">Agent 运行时评估平台</a>
-      <a href="/portfolio/dsh-multi-chat/">dsh-multi-chat</a>
-    </div>
-    <div class="docs-group"><p>游戏工具</p>
-      <a href="/portfolio/pixel-asset-workshop/" aria-current="page">Pixel Asset Workshop</a>
-    </div>
-    <div class="docs-group"><p>文章与联系</p>
-      <a href="/portfolio/notes/">博客与动态</a>
-      <a href="/#contact">联系我</a>
-    </div>
-    <div class="docs-group"><a href="/studio/">工作室</a></div>
-</nav>
-
-<div class="docs-layout">
-  <aside class="docs-sidebar">
-    <a class="sidebar-identity" href="/">
-      <img src="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=88" width="44" height="44" alt="">
-      <span><strong>daetz</strong><small>AI Agent 工程作品集</small></span>
-    </a>
-    <nav aria-label="作品集侧栏">
-    <div class="docs-group"><p>作品集</p>
-      <a href="/">个人首页</a>
-      <a href="/portfolio/catalog/">全部项目</a>
-    </div>
-    <div class="docs-group"><p>AI Agent 工程</p>
-      <a href="/portfolio/deepsupport-os/">DeepSupport-OS</a>
-      <a href="/portfolio/raglab/">RAGLab</a>
-      <a href="/portfolio/agent-eval-platform/">Agent 运行时评估平台</a>
-      <a href="/portfolio/dsh-multi-chat/">dsh-multi-chat</a>
-    </div>
-    <div class="docs-group"><p>游戏工具</p>
-      <a href="/portfolio/pixel-asset-workshop/" aria-current="page">Pixel Asset Workshop</a>
-    </div>
-    <div class="docs-group"><p>文章与联系</p>
-      <a href="/portfolio/notes/">博客与动态</a>
-      <a href="/#contact">联系我</a>
-    </div>
+<header class="topbar">
+  <div class="wrap topbar-inner">
+    <a class="wordmark" href="/"><span>daetz</span><span class="wordmark-slash" aria-hidden="true">/</span> 项目仓库</a>
+    <nav class="top-links" aria-label="站点导航">
+      <a href="/#projects">项目</a>
+      <a href="/portfolio/notes/">文章</a>
+      <a href="https://github.com/daetz-coder">GitHub <span aria-hidden="true">↗</span></a>
     </nav>
-  </aside>
-  <main class="docs-main" id="content" tabindex="-1">
-    <div class="doc-reader">
-      <article class="doc-article">
-        <header class="doc-intro" data-enter>
-          <p class="doc-kicker">游戏工具 · 个人实验</p>
-          <h1>Pixel Asset Workshop</h1>
-          <p><a href="/projects/pixel-asset-workshop/index.zh.html">查看案例 ↗</a></p>
-        </header>
-        <section id="overview">
-          <h2>做了什么</h2>
-          <p>把一条视频里的六个兵种动作做成游戏素材。</p>
-        </section>
-        <section id="implementation">
-          <h2>怎么做</h2>
-          <p>用 SpriteFrame 拆帧、去底并挑选动作。</p>
-        </section>
-        <section id="result">
-          <h2>结果</h2>
-          <p>导出透明精灵图。Godot 实机录屏中，上排是 Tiny Swords 原版兵种，下排是本次生成兵种。</p>
+  </div>
+</header>
+<main class="wrap reader" id="content" tabindex="-1">
+  <nav class="breadcrumbs" aria-label="面包屑"><a href="/#projects">全部项目</a><span aria-hidden="true">/</span><a href="/?category=tool#projects">工具与应用</a></nav>
+  <header class="project-heading">
+    <h1>Pixel Asset Workshop</h1>
+    <p>将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。</p>
+    <ul class="technology" aria-label="技术栈"><li>Pixel Art</li><li>SpriteFrame</li><li>Godot</li></ul>
+    <div class="source-links"><a href="/projects/pixel-asset-workshop/index.zh.html">查看案例 ↗</a></div>
+  </header>
+  <nav class="chapter-nav" aria-label="本页章节"><a href="#overview">一条视频里的六个兵种</a><a href="#implementation">用 SpriteFrame 拆帧与筛帧</a><a href="#result">Godot 训练场实录</a><a href="#quickstart">复现这批素材</a></nav>
+  <article class="project-body">
+    <section class="chapter" id="overview">
+      <h2>一条视频里的六个兵种</h2>
+      <p>把一条视频里的六个兵种动作做成游戏素材。</p>
+    </section>
+    <section class="chapter" id="implementation">
+      <h2>用 SpriteFrame 拆帧与筛帧</h2>
+      <p>用 SpriteFrame 拆帧、去底并挑选动作。</p>
+    </section>
+    <section class="chapter" id="result">
+      <h2>Godot 训练场实录</h2>
+      <p>导出透明精灵图。Godot 实机录屏中，上排是 Tiny Swords 原版兵种，下排是本次生成兵种。</p>
           <figure class="doc-compact-media">
           <video controls preload="none" playsinline width="880" height="560"
             aria-label="Godot 训练场实机录像"
@@ -118,32 +56,25 @@
           </video>
 
         </figure>
-        </section>
-        <section id="quickstart">
-          <h2>如何体验</h2>
-          <ol>
+      <p class="credit">Tiny Swords 原版素材来自 <a href="https://pixelfrog-assets.itch.io/tiny-swords">Pixel Frog</a>。</p>
+    </section>
+    <section class="chapter" id="quickstart">
+      <h2>复现这批素材</h2>
+      <ol>
             <li>按安装页准备 SpriteFrame、Python 和 FFmpeg。</li>
             <li>载入项目提供的示例 MP4 与格位 JSON，检查裁框和脚底锚点。</li>
             <li>去底并选帧，导出透明 PNG。打开项目的 Godot 示例检查动作和对齐。</li>
           </ol>
           <p><a href="/projects/pixel-asset-workshop/showcase/spriteframe.zh.html#install">SpriteFrame 安装与示例 ↗</a></p>
-        </section>
-        <nav class="doc-pagination" aria-label="相邻项目"><a href="/portfolio/dsh-multi-chat/">← dsh-multi-chat</a><a href="/portfolio/catalog/">全部项目 →</a></nav>
-        <footer class="doc-credit">Tiny Swords 原版素材来自 <a href="https://pixelfrog-assets.itch.io/tiny-swords">Pixel Frog</a>。</footer>
-      </article>
-      <nav class="doc-outline" aria-label="本页目录">
-        <p>本页目录</p>
-        <a href="#overview">做了什么</a>
-        <a href="#implementation">怎么做</a>
-        <a href="#result">结果</a>
-        <a href="#quickstart">如何体验</a>
-      </nav>
-    </div>
-  </main>
-</div>
-
-<div id="toast" role="status"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>已复制到剪贴板</span></div>
-
-<script src="/assets/js/site.js"></script>
+    </section>
+  </article>
+  <p class="back-index"><a href="/#projects">← 返回项目索引</a></p>
+</main>
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <a href="/">daetz / 项目仓库</a>
+    <nav aria-label="站点链接"><a href="/studio/">工作室</a><a href="mailto:3446914219@qq.com">邮件</a><a href="https://github.com/daetz-coder">GitHub ↗</a></nav>
+  </div>
+</footer>
 </body>
 </html>
