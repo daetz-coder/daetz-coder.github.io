@@ -216,7 +216,7 @@
   var hasGhLive=document.getElementById('ghRepos')||document.getElementById('chRepos');
   function fmtN(n){return (n==null)?'0':n.toLocaleString('en-US');}
   function applyGithub(u,repos){
-    var stars=repos.reduce(function(s,r){return s+(r.stargazers_count||0);},0);
+    var stars=Array.isArray(repos)?repos.reduce(function(s,r){return s+(r.stargazers_count||0);},0):null;
     var followers=u?u.followers:null;
     var reposN=Array.isArray(repos)?repos.length:(u?u.public_repos:null);
     var map={

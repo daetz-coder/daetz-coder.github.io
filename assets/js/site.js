@@ -16,7 +16,7 @@
     if(t==='dark'){sun.style.display='';moon.style.display='none';}
     else{sun.style.display='none';moon.style.display='';}
     var mc=document.querySelector('meta[name="theme-color"]');
-    if(mc)mc.setAttribute('content',t==='dark'?'#0a0a0b':'#fafafa');
+    if(mc)mc.setAttribute('content',getComputedStyle(root).getPropertyValue('--bg').trim());
   }
   var themeBtn=document.getElementById('themeBtn');
   if(themeBtn)themeBtn.addEventListener('click',function(){
@@ -30,17 +30,52 @@
   var menu=document.getElementById('mobileMenu');
   var menuBtn=document.getElementById('menuBtn');
   var mmClose=document.getElementById('mmClose');
-  function openMenu(){menu.classList.add('open');menuBtn.setAttribute('aria-label','关闭菜单');}
-  function closeMenu(){menu.classList.remove('open');menuBtn.setAttribute('aria-label','打开菜单');}
-  if(menuBtn)menuBtn.addEventListener('click',function(){menu.classList.contains('open')?closeMenu():openMenu();});
-  if(mmClose)mmClose.addEventListener('click',closeMenu);
-  if(menu)menu.addEventListener('click',function(e){if(e.target.tagName==='A')closeMenu();});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeMenu();});
-  window.addEventListener('resize',function(){if(innerWidth>680)closeMenu();});
+  if(menu && menuBtn){
+    var mobileBreakpoint=matchMedia(document.body.classList.contains('portfolio')?'(max-width: 720px)':'(max-width: 680px)');
+    function setMenu(open,restoreFocus){
+      menu.classList.toggle('open',open);
+      menu.hidden=!open;
+      menuBtn.setAttribute('aria-expanded',String(open));
+      menuBtn.setAttribute('aria-label',open?'关闭菜单':'打开菜单');
+      if(open && mmClose)requestAnimationFrame(function(){
+        if(menu.classList.contains('open'))mmClose.focus();
+      });
+      if(restoreFocus)menuBtn.focus();
+    }
+    setMenu(false,false);
+    menuBtn.addEventListener('click',function(){setMenu(!menu.classList.contains('open'),false);});
+    if(mmClose)mmClose.addEventListener('click',function(){setMenu(false,true);});
+    menu.addEventListener('click',function(e){
+      var link=e.target.closest('a');
+      if(!link || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey)return;
+      setMenu(false,false);
+      if(link.hash && link.pathname===location.pathname){
+        var target=document.getElementById(link.hash.slice(1));
+        if(target){
+          e.preventDefault();
+          if(location.hash!==link.hash)history.pushState(null,'',link.hash);
+          target.scrollIntoView();
+          target.setAttribute('tabindex','-1');
+          target.focus({preventScroll:true});
+        }
+      }
+    });
+    document.addEventListener('keydown',function(e){
+      if(!menu.classList.contains('open'))return;
+      if(e.key==='Escape')setMenu(false,true);
+      if(e.key==='Tab'){
+        var controls=menu.querySelectorAll('button,a[href]');
+        var first=controls[0],last=controls[controls.length-1];
+        if(e.shiftKey && document.activeElement===first){e.preventDefault();last.focus();}
+        if(!e.shiftKey && document.activeElement===last){e.preventDefault();first.focus();}
+      }
+    });
+    mobileBreakpoint.addEventListener('change',function(e){if(!e.matches)setMenu(false,false);});
+  }
 
   /* ===== Reveal 动画 ===== */
   var revealEls=document.querySelectorAll('.reveal');
-  if('IntersectionObserver' in window&&!prefersReduced){
+  if(root.classList.contains('js')&&'IntersectionObserver' in window&&!prefersReduced){
     var ro=new IntersectionObserver(function(entries){
       entries.forEach(function(en){
         if(en.isIntersecting){en.target.classList.add('in');ro.unobserve(en.target);}
@@ -71,7 +106,7 @@
     }
     requestAnimationFrame(step);
   }
-  if(!prefersReduced&&'IntersectionObserver' in window){
+  if(!document.body.classList.contains('portfolio')&&!prefersReduced&&'IntersectionObserver' in window){
     var co=new IntersectionObserver(function(entries){
       entries.forEach(function(en){
         if(en.isIntersecting){animateCount(en.target);co.unobserve(en.target);}
@@ -126,14 +161,14 @@
   var projEmpty=document.getElementById('projEmpty');
   filters.forEach(function(btn){
     btn.addEventListener('click',function(){
-      filters.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-selected','false');});
-      btn.classList.add('active');btn.setAttribute('aria-selected','true');
+      filters.forEach(function(b){b.classList.remove('active');b.setAttribute('aria-pressed','false');});
+      btn.classList.add('active');btn.setAttribute('aria-pressed','true');
       var cat=btn.getAttribute('data-cat');
       var visible=0;
       cards.forEach(function(card){
         var show=cat==='all'||card.getAttribute('data-cat')===cat;
         card.classList.toggle('hide',!show);
-        if(show){visible++;card.classList.remove('in');void card.offsetWidth;card.classList.add('in');}
+        if(show){visible++;card.classList.add('in');}
       });
       if(projEmpty)projEmpty.classList.toggle('show',visible===0);
     });
@@ -216,7 +251,7 @@
   var hasGhLive=document.getElementById('ghRepos')||document.getElementById('chRepos');
   function fmtN(n){return (n==null)?'0':n.toLocaleString('en-US');}
   function applyGithub(u,repos){
-    var stars=repos.reduce(function(s,r){return s+(r.stargazers_count||0);},0);
+    var stars=Array.isArray(repos)?repos.reduce(function(s,r){return s+(r.stargazers_count||0);},0):null;
     var followers=u?u.followers:null;
     var reposN=Array.isArray(repos)?repos.length:(u?u.public_repos:null);
     var map={

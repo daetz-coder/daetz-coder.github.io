@@ -11,18 +11,22 @@
 <meta property="og:description" content="daetz 主页 · Agent 工程与技术博客">
 <meta property="og:url" content="https://daetz-coder.github.io/">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/77006398?v=4">
-<meta name="theme-color" content="#fafafa">
+<meta name="theme-color" content="#f7f6f1">
 <link rel="icon" href="https://avatars.githubusercontent.com/u/77006398?v=4&s=64">
 <link rel="preload" href="assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"daetz","alternateName":"大鹅同志","url":"https://daetz-coder.github.io/","image":"https://avatars.githubusercontent.com/u/77006398?v=4","jobTitle":"Agent Engineer","description":"Agent 系统工程与 RAG 工具链，DSH 生态插件作者","address":{"@type":"PostalAddress","addressLocality":"Hangzhou","addressRegion":"Zhejiang","addressCountry":"CN"},"sameAs":["https://github.com/daetz-coder","https://www.npmjs.com/package/dsh-multi-chat","https://blog.csdn.net/a_student_2020","https://www.zhihu.com/people/yi-yue-wang-ta-xiang"]}
 </script>
-<script>document.documentElement.classList.add('js');</script>
+<script>try {
+  const theme = localStorage.getItem('daetz-theme');
+  document.documentElement.dataset.theme = theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+} catch (_) {}</script>
 <link rel="stylesheet" href="assets/css/site.css">
+<link rel="stylesheet" href="assets/css/home.css">
 </head>
-<body>
-<a class="skip" href="#focus">跳到主要内容</a>
+<body class="portfolio">
+<a class="skip" href="#about">跳到主要内容</a>
 
 <nav class="nav" aria-label="主导航">
   <div class="nav-inner">
@@ -30,6 +34,7 @@
     <a href="#projects">项目</a>
     <a href="#blog">博客</a>
     <a href="#platforms">平台</a>
+    <a href="studio/">工作室</a>
     <a href="#now">动态</a>
     <a href="#stack">技术栈</a>
     <a href="#contact">联系</a>
@@ -38,96 +43,43 @@
         <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
         <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
       </button>
-      <button class="icon-btn" id="menuBtn" aria-label="打开菜单" title="菜单">
+      <button class="icon-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="打开菜单" title="菜单">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
   </div>
 </nav>
 
-<div class="mobile-menu" id="mobileMenu">
+<nav class="mobile-menu" id="mobileMenu" aria-label="移动导航" hidden>
   <button class="mm-close" id="mmClose" aria-label="关闭菜单">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M18 6 6 18M6 6l12 12"/></svg>
       </button>
   <a href="#projects">项目</a>
   <a href="#blog">博客</a>
   <a href="#platforms">平台</a>
+  <a href="studio/">工作室</a>
   <a href="#now">动态</a>
   <a href="#stack">技术栈</a>
   <a href="#contact">联系</a>
-</div>
+</nav>
 
 <main class="container" id="top">
 
-  <div class="home-layout">
-
-  <!-- ===== 左侧侧边栏 ===== -->
-  <aside class="sidebar" aria-label="侧边栏">
-
-    <nav class="sb-panel reveal" aria-label="站内导航">
-      <h4>站内导航</h4>
-      <div class="sb-nav">
-        <a href="#focus"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>简介</a>
-        <a href="#projects"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>项目精选<span class="sb-num">23</span></a>
-        <a href="#blog"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4a1 1 0 0 0-1-1H6.5A2.5 2.5 0 0 0 4 5.5v14Z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>技术博客</a>
-        <a href="#platforms"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.01a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51h.01a1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.01a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>全平台</a>
-        <a href="#now"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M19.1 4.9l-2.8 2.8M7.7 16.3l-2.8 2.8"/></svg>最近在做</a>
-        <a href="#stack"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8.5 5v10L12 22l-8.5-5V7L12 2Z"/><path d="M12 22V12"/><path d="m3.5 7 8.5 5 8.5-5"/></svg>技术栈</a>
-        <a href="#contact"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>联系</a>
-      </div>
-    </nav>
-
-  </aside>
-
-  <div class="home-content">
-
-  <!-- ===== 面包屑 ===== -->
-  <nav class="crumb-nav reveal" aria-label="面包屑">
-    <a href="#top">主页</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m9 6 6 6-6 6"/></svg>
-    <span class="now" id="crumbNow">个人主页 · daetz</span>
-  </nav>
-
   <!-- ===== Hero ===== -->
-  <header class="hero" id="about">
+  <header class="hero" id="about" tabindex="-1">
     <div class="hero-copy">
-      <span class="eyebrow reveal">Agent Engineering · Hangzhou</span>
-      <h1 class="reveal"><span class="grad">daetz</span><span class="h1-dot">.</span></h1>
-      <p class="typed-line reveal" aria-live="polite">专注 <em id="typed">Agent 系统工程</em><span class="cursor"></span></p>
-      <p class="tagline reveal d1">构建 <span class="hl">Agent 系统</span>与 <span class="hl">RAG 工具链</span>：Agent Harness 编排、LangGraph 多智能体、HITL 人工闭环、混合检索与带引用生成，以及 LLM-as-Judge 自动化评估。</p>
+      <div class="hero-profile"><img src="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=96" width="40" height="40" alt=""><span><strong>daetz</strong><small>Agent Engineer · 杭州</small></span></div>
+      <h1>构建 <span>AI Agent</span><br>与 RAG 工具链</h1>
+      <p class="tagline reveal d1">我做 Agent 编排、混合检索与自动化评估，关注如何把这些能力接入真实工作流。</p>
       <div class="cta-row reveal d2">
-        <a class="btn btn-primary" href="https://github.com/daetz-coder" target="_blank" rel="noopener">GitHub 主页
-          <span class="bi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+        <a class="btn btn-primary" href="#projects">浏览项目
+          <span class="bi"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14m-6-6 6 6 6-6"/></svg></span>
         </a>
-        <a class="btn btn-ghost" href="#contact">联系我
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4Z"/></svg>
-        </a>
+        <a class="btn btn-ghost" href="https://github.com/daetz-coder" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </div>
-    <div class="hero-aside reveal d2">
-      <div class="id-card" id="idCard">
-        <div class="avatar-wrap">
-          <div class="avatar"><img id="ghAvatar" src="https://avatars.githubusercontent.com/u/77006398?v=4" alt="daetz 头像"></div>
-          <div>
-            <div class="id-name">daetz</div>
-            <div class="id-handle">@daetz-coder</div>
-          </div>
-        </div>
-        <p class="id-bio" id="ghBio">Agent Engineering · NIDS · AMC · Few-Shot Learning · SLAM</p>
-        <div class="id-meta">
-          <span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:11px;height:11px;vertical-align:-1px;margin-right:4px;color:var(--accent)"><path d="M12 22s8-4.5 8-11a8 8 0 1 0-16 0c0 6.5 8 11 8 11Z"/><circle cx="12" cy="11" r="2.5"/></svg>杭州 · 中国</span>
-          <span id="ghRepoMeta"><b>29</b> 公开仓库</span>
-        </div>
-        <div class="id-foot">
-          <span class="status"><span class="dot"></span>OPEN TO COLLAB</span>
-          <div class="mini-social">
-            <a href="https://github.com/daetz-coder" target="_blank" rel="noopener" aria-label="GitHub"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.2 4.7 18.2 5 18.2 5c.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6a11.5 11.5 0 0 0 7.9-10.9C23.5 5.6 18.4.5 12 .5Z"/></svg></a>
-            <a href="https://www.npmjs.com/package/dsh-multi-chat" target="_blank" rel="noopener" aria-label="npm"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.8 1.8h20.4V22H12v-12H7.6V22H1.8V1.8Z"/></svg></a>
-            <a href="https://blog.csdn.net/a_student_2020" target="_blank" rel="noopener" aria-label="CSDN"><img src="https://cdn.simpleicons.org/csdn/FC5531" alt="CSDN"></a>
-            <a href="mailto:3446914219@qq.com" aria-label="邮件"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 7 9 6 9-6"/></svg></a>
-          </div>
-        </div>
-      </div>
+    <div class="hero-art" aria-hidden="true">
+      <img src="assets/images/agent-hero.webp" width="1000" height="1000" alt="" fetchpriority="high">
     </div>
   </header>
 
@@ -140,25 +92,6 @@
     <div class="stat"><div class="num" data-count="74">74</div><div class="lbl">CSDN 原创</div></div>
     <div class="stat"><div class="num" data-count="221,849">221,849</div><div class="lbl">CSDN 总访问</div></div>
   </div>
-
-  <!-- ===== 简介 ===== -->
-  <section id="focus">
-    <div class="about-grid">
-      <div class="about reveal">
-        <h2><span class="bar"></span>简介</h2>
-        <p>从 <b>网络空间安全</b> 与 <b>机器学习</b> 起步，一路走到 <b>AI Agent 系统工程</b>。关注 Agent Harness 编排、LangGraph 多智能体、HITL 人工闭环、混合检索与带引用生成，以及 LLM-as-Judge 的自动化评估。</p>
-        <p>持续打磨「可运行、可验证、可运营」的 AI 产品：一个组件 <b>dsh-multi-chat</b> 已发布 npm，并被 DeepSeek Harness 社区生态列表收录；其余项目覆盖企业支持、知识库、评估平台与移动协作。</p>
-        <p>研究兴趣：网络入侵检测（NIDS）、自动调制识别（AMC）、小样本学习（FSL）、SLAM 建图与多波束声呐数据处理。</p>
-      </div>
-      <div class="focus-box reveal d1">
-        <h3>当前专注 <span class="tag">2026</span></h3>
-        <p>把 Agent 能力从「Demo」推向「生产」：可运营、可评测、可接入真实工作流。</p>
-        <div class="chips">
-          <span>DeepSupport-OS</span><span>RAGLab</span><span>dsh-multi-chat</span><span>LLM-as-Judge</span><span>LangGraph</span><span>HITL</span><span>MCP</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <span id="agent" style="position:relative;top:-60px"></span>
   <span id="ml" style="position:relative;top:-60px"></span>
@@ -174,16 +107,27 @@
       <a class="sec-link reveal d2" href="https://github.com/daetz-coder?tab=repositories" target="_blank" rel="noopener">全部仓库 ↗</a>
     </div>
 
-            <div class="filters reveal" role="tablist" aria-label="项目分类筛选">
-      <button class="filter active" data-cat="all" role="tab">全部<span class="n">24</span></button>
-      <button class="filter" data-cat="agent" role="tab">Agent<span class="n">4</span></button>
-      <button class="filter" data-cat="rag" role="tab">RAG<span class="n">2</span></button>
-      <button class="filter" data-cat="dsh" role="tab">DSH 插件<span class="n">2</span></button>
-      <button class="filter" data-cat="ml" role="tab">AI/ML<span class="n">9</span></button>
-      <button class="filter" data-cat="tool" role="tab">工具/应用<span class="n">7</span></button>
+    <div class="filters reveal" role="group" aria-label="项目分类筛选">
+      <button class="filter active" data-cat="all" type="button" aria-controls="projGrid" aria-pressed="true">全部<span class="n">24</span></button>
+      <button class="filter" data-cat="agent" type="button" aria-controls="projGrid" aria-pressed="false">Agent<span class="n">4</span></button>
+      <button class="filter" data-cat="rag" type="button" aria-controls="projGrid" aria-pressed="false">RAG<span class="n">2</span></button>
+      <button class="filter" data-cat="dsh" type="button" aria-controls="projGrid" aria-pressed="false">DSH 插件<span class="n">2</span></button>
+      <button class="filter" data-cat="ml" type="button" aria-controls="projGrid" aria-pressed="false">AI/ML<span class="n">9</span></button>
+      <button class="filter" data-cat="tool" type="button" aria-controls="projGrid" aria-pressed="false">工具/应用<span class="n">7</span></button>
     </div>
 
     <div class="grid" id="projGrid">
+      <article class="card project-feature reveal" data-cat="tool">
+        <div class="project-cover" aria-hidden="true">
+          <img src="projects/pixel-asset-workshop/examples/tiny-swords/preview/workflow-poster.webp" width="1280" height="720" alt="" loading="lazy">
+        </div>
+        <div class="project-feature-copy">
+          <div class="top"><h3><a href="projects/pixel-asset-workshop/">Pixel Asset Workshop</a></h3><span class="lang-chip">Python · Godot</span></div>
+          <p>将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。</p>
+          <div class="stats"><span>Pixel Art</span><span>SpriteFrame</span><span>Godot</span></div>
+          <div class="card-links"><a href="projects/pixel-asset-workshop/">作品页 ↗</a></div>
+        </div>
+      </article>
       <article class="card reveal d1" data-cat="agent">
         <div class="top"><h3><a href="projects/deepsupport-os/">DeepSupport-OS</a></h3><span class="lang-chip">Python · Agent Harness</span></div>
         <p>企业 IT Help Desk <span class="hl">Agent Harness</span>：M365 · Skills/Subagents · HITL 人工闭环 · 自动化评测。</p>
@@ -251,12 +195,7 @@
           <a href="https://github.com/daetz-coder/DSH-Mobile" target="_blank" rel="noopener">源码 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
       </article>
 
-      <article class="card reveal d1" data-cat="tool">
-        <div class="top"><h3><a href="projects/pixel-asset-workshop/">Pixel Asset Workshop</a></h3><span class="lang-chip">Python · Godot</span></div>
-        <p>将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。</p>
-        <div class="stats"><span>Pixel Art</span><span>SpriteFrame</span><span>Godot</span></div>
-        <div class="card-links"><a href="projects/pixel-asset-workshop/">作品页 ↗</a></div>
-      </article>
+
 
       <article class="card reveal d1" data-cat="tool">
         <div class="top"><h3><a href="projects/curloop/">CurLoop</a></h3><span class="lang-chip">Python · Node</span></div>
@@ -382,7 +321,7 @@
           <a href="https://github.com/daetz-coder/Mesh-Denoising" target="_blank" rel="noopener">源码 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a></div>
       </article>
     </div>
-    <p id="projEmpty">该分类暂无项目，换个分类看看。</p>
+    <p id="projEmpty" role="status">该分类暂无项目，换个分类看看。</p>
   </section>
 
   <!-- ===== 博客 ===== -->
@@ -426,6 +365,25 @@
         <h3><a href="https://blog.csdn.net/a_student_2020/article/details/146983419" target="_blank" rel="noopener">ROS 合集（五）：SVIn2 开源项目复现，从环境配置到跑通数据集</a></h3>
         <div class="foot"><span class="views"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>2,059 阅读</span><a class="go" href="https://blog.csdn.net/a_student_2020/article/details/146983419" target="_blank" rel="noopener">阅读全文 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
       </article>
+    </div>
+  </section>
+
+  <!-- ===== 简介 ===== -->
+  <section id="focus">
+    <div class="about-grid">
+      <div class="about reveal">
+        <h2><span class="bar"></span>简介</h2>
+        <p>从 <b>网络空间安全</b> 与 <b>机器学习</b> 起步，一路走到 <b>AI Agent 系统工程</b>。关注 Agent Harness 编排、LangGraph 多智能体、HITL 人工闭环、混合检索与带引用生成，以及 LLM-as-Judge 的自动化评估。</p>
+        <p>持续打磨「可运行、可验证、可运营」的 AI 产品：一个组件 <b>dsh-multi-chat</b> 已发布 npm，并被 DeepSeek Harness 社区生态列表收录；其余项目覆盖企业支持、知识库、评估平台与移动协作。</p>
+        <p>研究兴趣：网络入侵检测（NIDS）、自动调制识别（AMC）、小样本学习（FSL）、SLAM 建图与多波束声呐数据处理。</p>
+      </div>
+      <div class="focus-box reveal d1">
+        <h3>当前专注 <span class="tag">2026</span></h3>
+        <p>把 Agent 能力从「Demo」推向「生产」：可运营、可评测、可接入真实工作流。</p>
+        <div class="chips">
+          <span>DeepSupport-OS</span><span>RAGLab</span><span>dsh-multi-chat</span><span>LLM-as-Judge</span><span>LangGraph</span><span>HITL</span><span>MCP</span>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -576,11 +534,11 @@
         <span><span class="ci-name">GitHub</span><br><span class="ci-sub">@daetz-coder</span></span>
         <span class="ci-link">打开 ↗</span>
       </a>
-      <a href="mailto:3446914219@qq.com">
+      <div class="c-item">
         <span class="ci-ico"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="3"/><path d="m3 7 9 6 9-6"/></svg></span>
-        <span><span class="ci-name">Email</span><br><span class="ci-sub">3446914219@qq.com</span></span>
-        <span class="ci-link copy" data-copy="3446914219@qq.com" role="button" tabindex="0" aria-label="复制邮箱"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V5.5A2.5 2.5 0 0 1 7.5 3H17"/></svg> 复制</span>
-      </a>
+        <span><span class="ci-name">Email</span><br><a class="email-link" href="mailto:3446914219@qq.com">3446914219@qq.com</a></span>
+        <button class="ci-link copy" type="button" data-copy="3446914219@qq.com" aria-label="复制邮箱"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:12px;height:12px"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V5.5A2.5 2.5 0 0 1 7.5 3H17"/></svg> 复制</button>
+      </div>
       <a href="https://www.npmjs.com/package/dsh-multi-chat" target="_blank" rel="noopener">
         <span class="ci-ico"><img src="https://cdn.simpleicons.org/npm/CB3837" alt=""></span>
         <span><span class="ci-name">npm</span><br><span class="ci-sub">dsh-multi-chat</span></span>
@@ -604,10 +562,6 @@
     </div>
   </section>
 
-  </div>
-
-  </div>
-
 </main>
 
 <footer>
@@ -626,7 +580,7 @@
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
 </button>
 
-<div id="toast"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>已复制到剪贴板</span></div>
+<div id="toast" role="status"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>已复制到剪贴板</span></div>
 
 <script src="assets/js/site.js"></script>
 </body>
