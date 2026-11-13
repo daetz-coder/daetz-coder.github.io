@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>博客与动态 · daetz 作品集</title>
+<meta name="description" content="daetz 的技术博客、开源平台、近期项目和技术栈。">
+<meta name="author" content="daetz">
+<meta property="og:type" content="website">
+<meta property="og:title" content="博客与动态 · daetz 作品集">
+<meta property="og:description" content="daetz 的技术博客、开源平台、近期项目和技术栈。">
+<meta property="og:url" content="https://daetz-coder.github.io/portfolio/notes/">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/77006398?v=4">
+<meta name="theme-color" content="#f7f6f1">
+<link rel="icon" href="https://avatars.githubusercontent.com/u/77006398?v=4&s=64">
+<link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<script>try {
+  const theme = localStorage.getItem('daetz-theme');
+  document.documentElement.dataset.theme = theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+} catch (_) {}</script>
+<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="/assets/css/home.css">
+</head>
+<body class="portfolio docs">
+<a class="skip" href="#content">跳到主要内容</a>
+<header class="nav">
+  <nav class="nav-inner" aria-label="顶部导航">
+    <a class="brand" href="/"><span class="brand-mark brand-avatar"><img src="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=56" alt=""></span>daetz</a>
+    <a href="/portfolio/notes/">博客与动态</a>
+    <a href="/studio/">工作室</a>
+    <a href="https://github.com/daetz-coder">GitHub ↗</a>
+    <div class="nav-actions">
+      <button class="icon-btn" id="themeBtn" aria-label="切换主题" title="切换深浅主题">
+        <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
+        <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <button class="icon-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="打开菜单" title="菜单">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+<nav class="mobile-menu docs-mobile" id="mobileMenu" aria-label="移动导航" hidden>
+  <button class="mm-close" id="mmClose" aria-label="关闭菜单">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+    <div class="docs-group"><p>作品集</p>
+      <a href="/">个人首页</a>
+      <a href="/portfolio/catalog/">全部项目</a>
+    </div>
+    <div class="docs-group"><p>AI Agent 工程</p>
+      <a href="/portfolio/deepsupport-os/">DeepSupport-OS</a>
+      <a href="/portfolio/raglab/">RAGLab</a>
+      <a href="/portfolio/agent-eval-platform/">Agent 运行时评估平台</a>
+      <a href="/portfolio/dsh-multi-chat/">dsh-multi-chat</a>
+    </div>
+    <div class="docs-group"><p>游戏工具</p>
+      <a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop</a>
+    </div>
+    <div class="docs-group"><p>其他</p>
+      <a href="/portfolio/notes/" aria-current="page">博客与动态</a>
+      <a href="/#contact">联系我</a>
+    </div>
+    <div class="docs-group"><a href="/studio/">工作室</a></div>
+</nav>
+
+<div class="docs-layout">
+  <aside class="docs-sidebar">
+    <nav aria-label="作品集侧栏">
+    <div class="docs-group"><p>作品集</p>
+      <a href="/">个人首页</a>
+      <a href="/portfolio/catalog/">全部项目</a>
+    </div>
+    <div class="docs-group"><p>AI Agent 工程</p>
+      <a href="/portfolio/deepsupport-os/">DeepSupport-OS</a>
+      <a href="/portfolio/raglab/">RAGLab</a>
+      <a href="/portfolio/agent-eval-platform/">Agent 运行时评估平台</a>
+      <a href="/portfolio/dsh-multi-chat/">dsh-multi-chat</a>
+    </div>
+    <div class="docs-group"><p>游戏工具</p>
+      <a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop</a>
+    </div>
+    <div class="docs-group"><p>其他</p>
+      <a href="/portfolio/notes/" aria-current="page">博客与动态</a>
+      <a href="/#contact">联系我</a>
+    </div>
+    </nav>
+  </aside>
+  <main class="docs-main" id="content" tabindex="-1">
+    <header class="doc-intro">
+      <h1>博客与动态</h1>
+      <p>技术文章、开源平台与近期工作。</p>
+    </header>
+  <section id="blog">
+    <div class="sec-head">
+      <div>
+        <p class="kick reveal">Writing</p>
+        <h2 class="reveal"><span class="bar"></span>技术博客</h2>
+        <p class="sec-sub reveal d1">实战项目复现、踩坑记录与工程经验，同步发布在 CSDN。累计 74 篇原创，5,000+ 粉丝。</p>
+      </div>
+      <a class="sec-link reveal d2" href="https://blog.csdn.net/a_student_2020" target="_blank" rel="noopener">CSDN 博客 ↗</a>
+    </div>
+    <div class="blog-grid">
+      <article class="post reveal">
+        <div class="meta"><span class="cat">Agent 评估</span><i></i><span>2026.07</span></div>
+        <h3><a href="https://blog.csdn.net/a_student_2020/article/details/162671803" target="_blank" rel="noopener">Agent Runtime Evaluation Platform：AI Agent 运行时全维度质量评估平台</a></h3>
+        <div class="foot"><span class="views"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>431 阅读</span><a class="go" href="https://blog.csdn.net/a_student_2020/article/details/162671803" target="_blank" rel="noopener">阅读全文 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="post reveal d1">
+        <div class="meta"><span class="cat">工具</span><i></i><span>2026.05</span></div>
+        <h3><a href="https://blog.csdn.net/a_student_2020/article/details/160923675" target="_blank" rel="noopener">告别手动写周报：用 git-reporter 让 Claude 从 Git 历史自动生成工作汇报</a></h3>
+        <div class="foot"><span class="views"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>319 阅读</span><a class="go" href="https://blog.csdn.net/a_student_2020/article/details/160923675" target="_blank" rel="noopener">阅读全文 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="post reveal d2">
+        <div class="meta"><span class="cat">CV</span><i></i><span>2025.04</span></div>
+        <h3><a href="https://blog.csdn.net/a_student_2020/article/details/145027128" target="_blank" rel="noopener">实时面部情绪识别：从 Haar 级联到 EfficientNetV2 的七类情绪分类</a></h3>
+        <div class="foot"><span class="views"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>2,750 阅读</span><a class="go" href="https://blog.csdn.net/a_student_2020/article/details/145027128" target="_blank" rel="noopener">阅读全文 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="post reveal">
+        <div class="meta"><span class="cat">信号处理</span><i></i><span>2025.05</span></div>
+        <h3><a href="https://blog.csdn.net/a_student_2020/article/details/148137763" target="_blank" rel="noopener">GIGNet：Graph-in-Graph 神经网络实现自动调制识别</a></h3>
+        <div class="foot"><span class="views"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>1,084 阅读</span><a class="go" href="https://blog.csdn.net/a_student_2020/article/details/148137763" target="_blank" rel="noopener">阅读全文 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="post reveal d1">
+        <div class="meta"><span class="cat">数据集</span><i></i><span>2025.08</span></div>
+        <h3><a href="https://blog.csdn.net/a_student_2020/article/details/143057988" target="_blank" rel="noopener">RadioML2018.01a 数据拆分：按调制类型与信噪比划分数据集</a></h3>
+        <div class="foot"><span class="views"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>2,342 阅读</span><a class="go" href="https://blog.csdn.net/a_student_2020/article/details/143057988" target="_blank" rel="noopener">阅读全文 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+      <article class="post reveal d2">
+        <div class="meta"><span class="cat">ROS/SLAM</span><i></i><span>2025.09</span></div>
+        <h3><a href="https://blog.csdn.net/a_student_2020/article/details/146983419" target="_blank" rel="noopener">ROS 合集（五）：SVIn2 开源项目复现，从环境配置到跑通数据集</a></h3>
+        <div class="foot"><span class="views"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>2,059 阅读</span><a class="go" href="https://blog.csdn.net/a_student_2020/article/details/146983419" target="_blank" rel="noopener">阅读全文 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== 简介 ===== -->
+  <section id="focus">
+    <div class="about-grid">
+      <div class="about reveal">
+        <h2><span class="bar"></span>简介</h2>
+        <p>从 <b>网络空间安全</b> 与 <b>机器学习</b> 起步，一路走到 <b>AI Agent 系统工程</b>。关注 Agent Harness 编排、LangGraph 多智能体、HITL 人工闭环、混合检索与带引用生成，以及 LLM-as-Judge 的自动化评估。</p>
+        <p>持续打磨「可运行、可验证、可运营」的 AI 产品：一个组件 <b>dsh-multi-chat</b> 已发布 npm，并被 DeepSeek Harness 社区生态列表收录；其余项目覆盖企业支持、知识库、评估平台与移动协作。</p>
+        <p>研究兴趣：网络入侵检测（NIDS）、自动调制识别（AMC）、小样本学习（FSL）、SLAM 建图与多波束声呐数据处理。</p>
+      </div>
+      <div class="focus-box reveal d1">
+        <h3>当前专注 <span class="tag">2026</span></h3>
+        <p>把 Agent 能力从「Demo」推向「生产」：可运营、可评测、可接入真实工作流。</p>
+        <div class="chips">
+          <span>DeepSupport-OS</span><span>RAGLab</span><span>dsh-multi-chat</span><span>LLM-as-Judge</span><span>LangGraph</span><span>HITL</span><span>MCP</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 平台 ===== -->
+  <section id="platforms">
+    <div class="sec-head">
+      <div>
+        <h2 class="reveal"><span class="bar"></span>全平台足迹</h2>
+        <p class="sec-sub reveal d1">代码、包、文章与问答，我的内容分散在这些地方，全部可实时查看。</p>
+      </div>
+    </div>
+    <div class="channels">
+      <div class="ch-card reveal">
+        <div class="ch-head">
+          <span class="logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="gh-icon"><path d="M12 .5C5.6.5.5 5.6.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.6v-2.1c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.2 4.7 18.2 5 18.2 5c.6 1.6.2 2.8.1 3.1.7.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6a11.5 11.5 0 0 0 7.9-10.9C23.5 5.6 18.4.5 12 .5Z"/></svg></span>
+          <span class="ch-name">GitHub</span>
+          <a class="ch-link" href="https://github.com/daetz-coder" target="_blank" rel="noopener">前往 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+        <div class="ch-metrics">
+          <div class="ch-metric"><div class="num" id="chRepos">29</div><div class="lbl">公开仓库</div></div>
+          <div class="ch-metric"><div class="num" id="chStars">132</div><div class="lbl">累计 Star</div></div>
+          <div class="ch-metric"><div class="num" id="chFollowers">3</div><div class="lbl">Followers</div></div>
+        </div>
+        <div class="ch-items">
+          <div class="ch-item"><a href="https://github.com/daetz-coder/DeepSupport-OS" target="_blank" rel="noopener">DeepSupport-OS</a><p>企业 IT Help Desk Agent Harness</p></div>
+          <div class="ch-item"><a href="https://github.com/daetz-coder/dsh-multi-chat" target="_blank" rel="noopener">dsh-multi-chat</a><p>DSH 多窗口墙插件 · npm 已发布</p></div>
+          <div class="ch-item"><a href="https://github.com/daetz-coder" target="_blank" rel="noopener">查看全部仓库</a></div>
+        </div>
+        <div class="ch-badges">
+          <img src="https://img.shields.io/github/followers/daetz-coder?style=flat" alt="followers">
+          <img src="https://img.shields.io/github/stars/daetz-coder?style=flat" alt="stars">
+        </div>
+      </div>
+
+      <div class="ch-card reveal d1">
+        <div class="ch-head">
+          <span class="logo"><img src="https://cdn.simpleicons.org/npm/CB3837" alt="npm"></span>
+          <span class="ch-name">npm</span>
+          <a class="ch-link" href="https://www.npmjs.com/package/dsh-multi-chat" target="_blank" rel="noopener">前往 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+        <div class="ch-metrics">
+          <div class="ch-metric"><div class="num" id="chNpmVer">0.6.6</div><div class="lbl">latest</div></div>
+          <div class="ch-metric"><div class="num">14</div><div class="lbl">版本迭代</div></div>
+          <div class="ch-metric"><div class="num">✓</div><div class="lbl">已发布</div></div>
+        </div>
+        <div class="ch-items">
+          <div class="ch-item"><a href="https://www.npmjs.com/package/dsh-multi-chat" target="_blank" rel="noopener">dsh-multi-chat</a><p>DSH 多窗口墙 · 一行安装 / 一行卸载</p></div>
+          <div class="ch-item"><a href="https://github.com/daetz-coder/CurLoop" target="_blank" rel="noopener">curloop</a><p>Cursor 无人值守编码循环 CLI</p></div>
+          <div class="ch-item"><code class="copy-cmd" data-copy="npx dsh-multi-chat install" title="点击复制">npx dsh-multi-chat install
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2.5"/><path d="M5 15V5.5A2.5 2.5 0 0 1 7.5 3H17"/></svg>
+          </code></div>
+        </div>
+        <div class="ch-badges">
+          <img src="https://img.shields.io/npm/v/dsh-multi-chat" alt="npm version">
+          <img src="https://img.shields.io/npm/l/dsh-multi-chat" alt="npm license">
+        </div>
+      </div>
+
+      <div class="ch-card reveal d2">
+        <div class="ch-head">
+          <span class="logo"><img src="https://cdn.simpleicons.org/csdn/FC5531" alt="CSDN"></span>
+          <span class="ch-name">CSDN 博客</span>
+          <a class="ch-link" href="https://blog.csdn.net/a_student_2020" target="_blank" rel="noopener">前往 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+        </div>
+        <div class="ch-metrics">
+          <div class="ch-metric"><div class="num">74</div><div class="lbl">原创</div></div>
+          <div class="ch-metric"><div class="num">5,120</div><div class="lbl">粉丝</div></div>
+          <div class="ch-metric"><div class="num">221,849</div><div class="lbl">总访问</div></div>
+        </div>
+        <div class="ch-items">
+          <div class="ch-item"><a href="https://blog.csdn.net/a_student_2020" target="_blank" rel="noopener">技术专栏</a><p>AI / Agent / 信号处理 / ROS 实践文章</p></div>
+          <div class="ch-item"><a href="https://blog.csdn.net/a_student_2020" target="_blank" rel="noopener">经验分享</a><p>项目实战、踩坑与总结</p></div>
+        </div>
+        <div class="ch-badges">
+          <img src="https://img.shields.io/badge/CSDN-221849%E8%AE%BF%E9%97%AE-FC5531" alt="CSDN 访问">
+          <img src="https://img.shields.io/badge/CSDN-5120%E7%B2%89%E4%B8%9D-FC5531" alt="CSDN 粉丝">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 动态 ===== -->
+  <section id="now">
+    <div class="sec-head">
+      <div>
+        <h2 class="reveal"><span class="bar"></span>最近在做</h2>
+        <p class="sec-sub reveal d1">当前投入的方向与下一步计划。</p>
+      </div>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <div class="tl-time">NOW</div>
+        <h3>DeepSupport-OS：企业 IT 支持 Agent</h3>
+        <p>长期任务规划、Skills/Subagents 分工、HITL 人工审批闭环与自动化评测。</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">NOW</div>
+        <h3>RAGLab：中文企业报告 Hybrid RAG</h3>
+        <p>稠密/稀疏双路检索、带引用生成与拒答策略，文档生命周期管理与评测看板。</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-time">NOW</div>
+        <h3>dsh-multi-chat：DSH 生态插件维护</h3>
+        <p>已发布 npm 并进入多个第三方收录渠道，持续打磨多窗口墙与局域网网关体验。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 技术栈 ===== -->
+  <section id="stack">
+    <div class="sec-head">
+      <div>
+        <h2 class="reveal"><span class="bar"></span>技术栈</h2>
+        <p class="sec-sub reveal d1">从语言到框架，从检索到评估的完整工具链。</p>
+      </div>
+    </div>
+    <div class="stack-groups reveal">
+      <div class="stack-group">
+        <h4>语言与前端</h4>
+        <p class="tech-line"><b>Python</b> · TypeScript · JavaScript · Dart/Flutter · Vue3 · React</p>
+      </div>
+      <div class="stack-group">
+        <h4>Agent 与后端</h4>
+        <p class="tech-line"><b>LangGraph</b> · LangChain · FastAPI · Node.js · WebSocket · SSE · MCP</p>
+      </div>
+      <div class="stack-group">
+        <h4>RAG 与评估</h4>
+        <p class="tech-line"><b>Hybrid RAG</b> · Qdrant · Docling · Reranker · LLM-as-Judge · Agent Harness</p>
+      </div>
+      <div class="stack-group">
+        <h4>AI/ML 与信号</h4>
+        <p class="tech-line"><b>PyTorch</b> · CNN/ResNet · Few-Shot · MAML · AMC · NIDS · SLAM</p>
+      </div>
+    </div>
+  </section>
+
+
+  </main>
+</div>
+<button id="toTop" aria-label="返回顶部">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<div id="toast" role="status"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>已复制到剪贴板</span></div>
+
+<script src="/assets/js/site.js"></script>
+</body>
+</html>
