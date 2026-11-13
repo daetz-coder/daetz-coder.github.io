@@ -47,7 +47,7 @@
       <dl><dt>方向</dt><dd>企业 IT 支持</dd><dt>技术栈</dt><dd><ul class="technology" aria-label="技术栈"><li>Vue3</li><li>LangGraph</li><li>MCP</li><li>RAG</li></ul></dd></dl>
     </aside>
   </div>
-  <nav class="chapter-nav" aria-label="本页章节"><a href="#overview">把 IT 工单接进 Agent</a><a href="#implementation">任务编排与写操作审批</a><a href="#result">工单如何走完一轮</a><a href="#quickstart">本地运行</a></nav>
+  <nav class="chapter-nav" aria-label="本页章节"><a href="#overview">把 IT 工单接进 Agent</a><a href="#implementation">任务编排与写操作审批</a><a href="#architecture">系统架构</a><a href="#result">工单如何走完一轮</a><a href="#quickstart">本地运行</a></nav>
   <article class="project-body">
     <section class="chapter" id="overview">
       <h2>把 IT 工单接进 Agent</h2>
@@ -57,6 +57,15 @@
       <h2>任务编排与写操作审批</h2>
       <p>收到 Outlook、Teams 等问题后，Agent 先查账号和工单，再调用对应的 SOP Skill 排障。LangGraph 负责任务编排，Subagents 分担检索等子任务。</p>
           <p>创建、升级或关闭工单，以及重置密码等写操作，都需要先通过人工审批。</p>
+    </section>
+    <section class="chapter" id="architecture">
+      <h2>系统架构</h2>
+      <figure class="project-evidence">
+        <a href="/assets/images/deepsupport-architecture.webp">
+          <img src="/assets/images/deepsupport-architecture.webp" width="1440" height="960" loading="lazy" alt="DeepSupport OS 架构图，包含客户端、API、Agent Runtime、Skills、MCP、数据和评估">
+        </a>
+        <figcaption>源码仓库提供的架构图。点击查看大图。</figcaption>
+      </figure>
     </section>
     <section class="chapter" id="result">
       <h2>工单如何走完一轮</h2>
