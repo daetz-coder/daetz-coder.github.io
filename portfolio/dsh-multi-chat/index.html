@@ -11,7 +11,7 @@
 <meta property="og:description" content="给 DeepSeek Harness 做了多窗口插件，用来同时查看多个 Agent 会话。">
 <meta property="og:url" content="https://daetz-coder.github.io/portfolio/dsh-multi-chat/">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/77006398?v=4">
-<meta name="theme-color" content="#f7f6f1">
+<meta name="theme-color" content="#f3f0e8">
 <link rel="icon" href="https://avatars.githubusercontent.com/u/77006398?v=4&s=64">
 <link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -19,14 +19,13 @@
   const theme = localStorage.getItem('daetz-theme');
   document.documentElement.dataset.theme = theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 } catch (_) {}</script>
-<link rel="stylesheet" href="/assets/css/site.css">
-<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/portfolio.css">
 </head>
 <body class="portfolio docs">
 <a class="skip" href="#content">跳到主要内容</a>
 <header class="nav">
   <nav class="nav-inner" aria-label="顶部导航">
-    <a class="brand" href="/"><span class="brand-mark brand-avatar"><img src="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=56" alt=""></span>daetz</a>
+    <a class="brand" href="/">daetz<span>.</span></a>
     <a href="/portfolio/notes/">博客与动态</a>
     <a href="/studio/">工作室</a>
     <a href="https://github.com/daetz-coder">GitHub ↗</a>
@@ -35,7 +34,7 @@
         <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
         <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
       </button>
-      <button class="icon-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="打开菜单" title="菜单">
+      <button class="icon-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="打开菜单" title="作品集目录"><span>目录</span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
@@ -58,7 +57,7 @@
     <div class="docs-group"><p>游戏工具</p>
       <a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop</a>
     </div>
-    <div class="docs-group"><p>其他</p>
+    <div class="docs-group"><p>文章与联系</p>
       <a href="/portfolio/notes/">博客与动态</a>
       <a href="/#contact">联系我</a>
     </div>
@@ -67,6 +66,10 @@
 
 <div class="docs-layout">
   <aside class="docs-sidebar">
+    <a class="sidebar-identity" href="/">
+      <img src="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=88" width="44" height="44" alt="">
+      <span><strong>daetz</strong><small>AI Agent 工程作品集</small></span>
+    </a>
     <nav aria-label="作品集侧栏">
     <div class="docs-group"><p>作品集</p>
       <a href="/">个人首页</a>
@@ -81,7 +84,7 @@
     <div class="docs-group"><p>游戏工具</p>
       <a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop</a>
     </div>
-    <div class="docs-group"><p>其他</p>
+    <div class="docs-group"><p>文章与联系</p>
       <a href="/portfolio/notes/">博客与动态</a>
       <a href="/#contact">联系我</a>
     </div>
@@ -90,7 +93,7 @@
   <main class="docs-main" id="content" tabindex="-1">
     <div class="doc-reader">
       <article class="doc-article">
-        <header class="doc-intro">
+        <header class="doc-intro" data-enter>
           <p class="doc-kicker">DeepSeek Harness · 开源插件</p>
           <h1>dsh-multi-chat</h1>
           <p><a href="https://www.npmjs.com/package/dsh-multi-chat">查看 npm 包 ↗</a></p>
@@ -109,7 +112,6 @@
           <p>桌面可并排查看多个会话，手机和平板可接入同一网关。插件已发布到 npm。</p>
           <figure>
           <a href="/assets/images/dsh.webp"><img src="/assets/images/dsh.webp" width="1200" height="522" loading="lazy" alt="dsh-multi-chat 在 Windows 上并排显示两个会话"></a>
-          <figcaption>仓库里的 Windows 双会话截图</figcaption>
         </figure>
         </section>
         <section id="quickstart">
@@ -132,9 +134,6 @@ npx dsh-multi-chat start --ports 3080,3081,3082</code></pre>
     </div>
   </main>
 </div>
-<button id="toTop" aria-label="返回顶部">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
 
 <div id="toast" role="status"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>已复制到剪贴板</span></div>
 

@@ -11,7 +11,7 @@
 <meta property="og:description" content="daetz 的 AI Agent 工程作品集，涵盖企业 IT 支持 Agent、混合检索、运行轨迹评估与开源插件。">
 <meta property="og:url" content="https://daetz-coder.github.io/">
 <meta property="og:image" content="https://avatars.githubusercontent.com/u/77006398?v=4">
-<meta name="theme-color" content="#f7f6f1">
+<meta name="theme-color" content="#f3f0e8">
 <link rel="icon" href="https://avatars.githubusercontent.com/u/77006398?v=4&s=64">
 <link rel="preload" href="/assets/fonts/space-grotesk-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/jetbrains-mono-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -19,8 +19,7 @@
   const theme = localStorage.getItem('daetz-theme');
   document.documentElement.dataset.theme = theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 } catch (_) {}</script>
-<link rel="stylesheet" href="/assets/css/site.css">
-<link rel="stylesheet" href="/assets/css/home.css">
+<link rel="stylesheet" href="/assets/css/portfolio.css">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"daetz","alternateName":"大鹅同志","url":"https://daetz-coder.github.io/","image":"https://avatars.githubusercontent.com/u/77006398?v=4","jobTitle":"Agent Engineer","description":"Agent 系统工程与 RAG 工具链，DSH 生态插件作者","address":{"@type":"PostalAddress","addressLocality":"Hangzhou","addressRegion":"Zhejiang","addressCountry":"CN"},"sameAs":["https://github.com/daetz-coder","https://www.npmjs.com/package/dsh-multi-chat","https://blog.csdn.net/a_student_2020","https://www.zhihu.com/people/yi-yue-wang-ta-xiang"]}
 </script>
@@ -29,7 +28,7 @@
 <a class="skip" href="#content">跳到主要内容</a>
 <header class="nav">
   <nav class="nav-inner" aria-label="顶部导航">
-    <a class="brand" href="/"><span class="brand-mark brand-avatar"><img src="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=56" alt=""></span>daetz</a>
+    <a class="brand" href="/">daetz<span>.</span></a>
     <a href="/portfolio/notes/">博客与动态</a>
     <a href="/studio/">工作室</a>
     <a href="https://github.com/daetz-coder">GitHub ↗</a>
@@ -38,7 +37,7 @@
         <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M19.1 4.9l-1.8 1.8M6.7 17.3l-1.8 1.8"/></svg>
         <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" style="display:none"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
       </button>
-      <button class="icon-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="打开菜单" title="菜单">
+      <button class="icon-btn" id="menuBtn" aria-controls="mobileMenu" aria-expanded="false" aria-label="打开菜单" title="作品集目录"><span>目录</span>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
     </div>
@@ -61,7 +60,7 @@
     <div class="docs-group"><p>游戏工具</p>
       <a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop</a>
     </div>
-    <div class="docs-group"><p>其他</p>
+    <div class="docs-group"><p>文章与联系</p>
       <a href="/portfolio/notes/">博客与动态</a>
       <a href="/#contact">联系我</a>
     </div>
@@ -70,6 +69,10 @@
 
 <div class="docs-layout">
   <aside class="docs-sidebar">
+    <a class="sidebar-identity" href="/">
+      <img src="https://avatars.githubusercontent.com/u/77006398?v=4&amp;s=88" width="44" height="44" alt="">
+      <span><strong>daetz</strong><small>AI Agent 工程作品集</small></span>
+    </a>
     <nav aria-label="作品集侧栏">
     <div class="docs-group"><p>作品集</p>
       <a href="/" aria-current="page">个人首页</a>
@@ -84,32 +87,43 @@
     <div class="docs-group"><p>游戏工具</p>
       <a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop</a>
     </div>
-    <div class="docs-group"><p>其他</p>
+    <div class="docs-group"><p>文章与联系</p>
       <a href="/portfolio/notes/">博客与动态</a>
       <a href="/#contact">联系我</a>
     </div>
     </nav>
   </aside>
   <main class="docs-main" id="content" tabindex="-1">
-    <header class="doc-intro" id="about">
-      <span id="focus"></span>
-      <p class="doc-kicker">杭州 · 开源开发者</p>
-      <h1>你好，我是 daetz。<br>我做 <span>AI Agent 工程</span>。</h1>
-      <p>我从网络安全和机器学习转向 Agent 工程，目前在做企业 IT 支持 Agent、中文文档 RAG 和运行时评估。正在寻找 AI Agent 工程相关岗位。</p>
-      <div class="doc-actions">
-        <a class="btn" href="mailto:3446914219@qq.com">邮件联系</a>
-        <a class="btn doc-secondary" href="https://github.com/daetz-coder">GitHub ↗</a>
+    <header class="home-intro" id="about" data-enter>
+      <div class="home-bio">
+        <span id="focus"></span>
+        <p class="doc-kicker">杭州 · 开源开发者</p>
+        <h1>daetz<span>.</span></h1>
+        <p class="home-role">AI Agent 工程</p>
+        <p class="home-summary">我从网络安全和机器学习转向 Agent 工程。目前在做企业 IT 支持 Agent、中文报告 RAG 和运行时评估，也在寻找 AI Agent 工程相关岗位。</p>
+        <div class="doc-actions">
+          <a class="btn" href="/portfolio/deepsupport-os/">阅读 Agent 案例 <span aria-hidden="true">→</span></a>
+          <a class="btn doc-secondary" href="mailto:3446914219@qq.com">邮件联系</a>
+        </div>
       </div>
+      <a class="home-preview" href="/portfolio/raglab/">
+        <div class="preview-image">
+          <img src="/assets/images/raglab.webp" width="1024" height="571" fetchpriority="high" alt="RAGLab 问答界面，右侧显示回答的引用依据">
+        </div>
+        <div class="preview-title"><strong>RAGLab</strong><span>查看项目 <span aria-hidden="true">↗</span></span></div>
+      </a>
     </header>
     <section class="docs-section" id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">代表项目</h2>
+      <div class="section-heading">
+        <h2 id="projects-title">代表项目</h2>
+        <a id="project-catalog" href="/portfolio/catalog/">全部 24 个项目 <span aria-hidden="true">→</span></a><span id="ml"></span>
+      </div>
       <ul class="doc-link-list">
-        <li id="agent"><a href="/portfolio/deepsupport-os/">DeepSupport-OS</a><span>企业 IT 支持 Agent、任务编排与人工审批</span></li>
-        <li><a href="/portfolio/raglab/">RAGLab</a><span>中文企业报告检索、原文引用与拒答</span></li>
-        <li><a href="/portfolio/agent-eval-platform/">Agent 运行时评估平台</a><span>采集执行轨迹，评估规划、工具调用和检索</span></li>
-        <li><a href="/portfolio/dsh-multi-chat/">dsh-multi-chat</a><span>DeepSeek Harness 多会话工作台与局域网网关</span></li>
+        <li id="agent"><a href="/portfolio/deepsupport-os/"><strong>DeepSupport-OS</strong><span>企业 IT 支持 Agent、任务编排与人工审批</span><span aria-hidden="true">↗</span></a></li>
+        <li><a href="/portfolio/raglab/"><strong>RAGLab</strong><span>中文企业报告检索、原文引用与拒答</span><span aria-hidden="true">↗</span></a></li>
+        <li><a href="/portfolio/agent-eval-platform/"><strong>Agent 运行时评估平台</strong><span>采集执行轨迹，评估规划、工具调用和检索</span><span aria-hidden="true">↗</span></a></li>
+        <li><a href="/portfolio/dsh-multi-chat/"><strong>dsh-multi-chat</strong><span>DeepSeek Harness 多会话工作台与局域网网关</span><span aria-hidden="true">↗</span></a></li>
       </ul>
-      <p id="project-catalog"><a href="/portfolio/catalog/">查看全部 24 个项目 →</a><span id="ml"></span></p>
     </section>
     <section class="docs-section" id="contact" aria-labelledby="contact-title">
       <h2 id="contact-title">联系</h2>
@@ -119,9 +133,6 @@
     <p class="doc-meta-links"><a id="blog" href="/portfolio/notes/#blog">技术博客</a> <a id="platforms" href="/portfolio/notes/#platforms">平台</a> <a id="now" href="/portfolio/notes/#now">近期动态</a> <a id="stack" href="/portfolio/notes/#stack">技术栈</a></p>
   </main>
 </div>
-<button id="toTop" aria-label="返回顶部">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
-</button>
 
 <div id="toast" role="status"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>已复制到剪贴板</span></div>
 
