@@ -1,10 +1,13 @@
 const search = document.querySelector('#project-search');
 const filterGroup = document.querySelector('.filters');
 const filters = [...filterGroup.querySelectorAll('[data-filter]')];
-const rows = [...document.querySelectorAll('.repo-row')].map(row => ({
-  element: row,
-  category: row.dataset.category,
-  text: searchText(row.textContent),
+const groups = [...document.querySelectorAll('[data-project-group]')].map(group => ({
+  element: group,
+  rows: [...group.querySelectorAll('.repo-row')].map(row => ({
+    element: row,
+    category: row.dataset.category,
+    text: searchText(row.textContent + ' ' + group.querySelector('h3').textContent),
+  })),
 }));
 const resultCount = document.querySelector('#result-count');
 const noResults = document.querySelector('.no-results');
@@ -22,11 +25,16 @@ function render() {
   const terms = searchText(search.value).trim().split(/\s+/).filter(Boolean);
   let count = 0;
 
-  for (const row of rows) {
-    const matches = (category === 'all' || row.category === category)
-      && terms.every(term => row.text.includes(term));
-    row.element.hidden = !matches;
-    if (matches) count++;
+  for (const group of groups) {
+    let groupCount = 0;
+    for (const row of group.rows) {
+      const matches = (category === 'all' || row.category === category)
+        && terms.every(term => row.text.includes(term));
+      row.element.hidden = !matches;
+      if (matches) groupCount++;
+    }
+    group.element.hidden = groupCount === 0;
+    count += groupCount;
   }
 
   for (const button of filters) {

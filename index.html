@@ -30,104 +30,12 @@
 <main class="wrap repository showcase-home" id="content" tabindex="-1">
   <header class="repo-heading" id="top">
     <div><h1>项目仓库</h1><p>Agent 系统、检索与评估，以及开源工具和研究复现。</p></div>
-    <a class="index-jump" href="#projects">浏览项目索引 <span aria-hidden="true">↓</span></a>
   </header>
-
-  <section class="featured" aria-labelledby="featured-title">
-    <h2 id="featured-title">AI Agent 项目</h2>
-    <div class="featured-projects">
-      <article class="featured-entry">
-        <a class="featured-preview" href="/portfolio/deepsupport-os/#architecture">
-          <img src="/assets/images/deepsupport-architecture-preview.webp" width="720" height="480" alt="DeepSupport OS 架构图">
-        </a>
-        <div class="featured-copy">
-          <h3><a href="/portfolio/deepsupport-os/">DeepSupport OS <span aria-hidden="true">↗</span></a></h3>
-          <p>处理 Microsoft 365 工单，规划排障任务，关键写操作经过人工审批。</p>
-          <div class="featured-actions">
-            <a href="/portfolio/deepsupport-os/#architecture">查看架构图 <span aria-hidden="true">→</span></a>
-            <a href="/portfolio/deepsupport-os/#quickstart">本地运行 <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </article>
-      <article class="featured-entry">
-        <a class="featured-preview" href="/portfolio/raglab/#preview">
-          <img src="/assets/images/raglab.webp" width="1024" height="571" alt="RAGLab 问答页面与右侧引用依据">
-        </a>
-        <div class="featured-copy">
-          <h3><a href="/portfolio/raglab/">RAGLab <span aria-hidden="true">↗</span></a></h3>
-          <p>对中文企业报告做混合检索，提供带引用的回答和检索评估看板。</p>
-          <div class="featured-actions">
-            <a href="/portfolio/raglab/#preview">查看问答截图 <span aria-hidden="true">→</span></a>
-            <a href="/portfolio/raglab/#quickstart">本地运行 <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </article>
-      <article class="featured-entry">
-        <a class="featured-preview sdk-preview" aria-label="查看 Agent 评估平台 SDK 示例源码" href="https://github.com/daetz-coder/Agent-Runtime-Evaluation-Platform/blob/main/example/sdk_demo.py">
-          <pre><code>from sdk import instrument_langgraph
-
-graph = instrument_langgraph(build_graph())</code></pre>
-        </a>
-        <div class="featured-copy">
-          <h3><a href="/portfolio/agent-eval-platform/">Agent Runtime Evaluation Platform <span aria-hidden="true">↗</span></a></h3>
-          <p>从执行轨迹评估 Agent 如何规划、调用工具、检索和调整计划。</p>
-          <div class="featured-actions">
-            <a href="https://github.com/daetz-coder/Agent-Runtime-Evaluation-Platform/blob/main/example/sdk_demo.py">查看 SDK 示例源码 <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </article>
-      <article class="featured-entry">
-        <a class="featured-preview" href="/portfolio/dsh-multi-chat/#preview">
-          <img src="/assets/images/dsh.webp" width="1200" height="522" loading="lazy" alt="Windows 双会话实拍">
-        </a>
-        <div class="featured-copy">
-          <h3><a href="/portfolio/dsh-multi-chat/">DSH Multi Chat <span aria-hidden="true">↗</span></a></h3>
-          <p>在桌面并排查看和操作多个 DeepSeek Harness 会话。</p>
-          <div class="featured-actions">
-            <a href="/portfolio/dsh-multi-chat/#preview">查看桌面截图 <span aria-hidden="true">→</span></a>
-            <a href="/portfolio/dsh-multi-chat/#quickstart">安装说明 <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </article>
-      <article class="featured-entry">
-        <a class="featured-preview" href="/projects/dsh-mobile/#preview">
-          <img src="/assets/images/dsh-mobile-chat.webp" width="560" height="1100" loading="lazy" alt="Android 会话实拍">
-        </a>
-        <div class="featured-copy">
-          <h3><a href="/projects/dsh-mobile/">DSH Mobile <span aria-hidden="true">↗</span></a></h3>
-          <p>从 Android 连接桌面会话。</p>
-          <div class="featured-actions">
-            <a href="/projects/dsh-mobile/#preview">查看 Android 截图 <span aria-hidden="true">→</span></a>
-            <a href="https://daetz-coder.github.io/DSH-Mobile/">打开项目官网 <span aria-hidden="true">↗</span></a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
-  <section class="featured" aria-labelledby="tools-title">
-    <h2 id="tools-title">游戏资产工具</h2>
-    <div class="featured-projects">
-      <article class="featured-entry">
-        <a class="featured-preview" href="/portfolio/pixel-asset-workshop/#preview">
-          <img src="/assets/images/pixel-training-preview.webp" width="480" height="305" loading="lazy" alt="Godot 训练场内两排兵种的对照画面">
-        </a>
-        <div class="featured-copy">
-          <h3><a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop <span aria-hidden="true">↗</span></a></h3>
-          <p>把多角色视频拆成透明 PNG 帧序列。</p>
-          <div class="featured-actions">
-            <a href="/portfolio/pixel-asset-workshop/#preview">播放 Godot 实录 <span aria-hidden="true">→</span></a>
-            <a href="/projects/pixel-asset-workshop/index.zh.html">打开中文流程演示 <span aria-hidden="true">→</span></a>
-          </div>
-        </div>
-      </article>
-    </div>
-  </section>
 
   <section class="index-section" id="projects" aria-labelledby="index-title">
     <span id="project-catalog"></span>
-    <span id="agent"></span><span id="ml"></span>
     <div class="index-head">
-      <div><h2 id="index-title">全部项目</h2><p id="result-count" aria-live="polite">24 个项目</p></div>
+      <div><h2 id="index-title">按方向浏览</h2><p id="result-count" aria-live="polite">24 个项目</p></div>
       <div class="search-field" hidden>
         <label for="project-search">搜索项目</label>
         <input id="project-search" type="search" autocomplete="off" placeholder="项目名、技术栈或关键词">
@@ -135,39 +43,58 @@ graph = instrument_langgraph(build_graph())</code></pre>
       </div>
     </div>
     <div class="filters" role="group" aria-label="项目分类" hidden>
-        <button type="button" data-filter="all" aria-pressed="true">全部 <span>24</span></button>
-        <button type="button" data-filter="agent" aria-pressed="false">Agent 系统 <span>4</span></button>
-        <button type="button" data-filter="rag" aria-pressed="false">知识检索 <span>2</span></button>
-        <button type="button" data-filter="dsh" aria-pressed="false">Harness 插件 <span>2</span></button>
-        <button type="button" data-filter="ml" aria-pressed="false">机器学习 <span>9</span></button>
-        <button type="button" data-filter="tool" aria-pressed="false">工具与应用 <span>7</span></button>
+      <button type="button" data-filter="all" aria-pressed="true">全部 <span>24</span></button>
+      <button type="button" data-filter="agent" aria-pressed="false">Agent 系统与协作 <span>4</span></button>
+      <button type="button" data-filter="rag" aria-pressed="false">知识检索与 RAG <span>2</span></button>
+      <button type="button" data-filter="dsh" aria-pressed="false">DeepSeek Harness 工具 <span>2</span></button>
+      <button type="button" data-filter="ml" aria-pressed="false">机器学习与研究复现 <span>9</span></button>
+      <button type="button" data-filter="tool" aria-pressed="false">开发与研究工具 <span>6</span></button>
+      <button type="button" data-filter="game" aria-pressed="false">游戏资产工具 <span>1</span></button>
     </div>
-    <div class="index-table">
-      <div class="index-columns" aria-hidden="true"><span>项目</span><span>方向</span><span>技术栈</span><span></span></div>
+    <div class="catalog-groups">
+    <section class="catalog-group" data-project-group id="group-agent" aria-labelledby="heading-agent">
+      <header class="group-heading" id="agent">
+        <h3 id="heading-agent">Agent 系统与协作</h3>
+        <p>企业工单自动化、执行轨迹评估，以及桌面和手机上的 Agent 协作。</p>
+      </header>
       <ul class="repo-list">
       <li class="repo-row" data-category="agent">
-        <a class="repo-main" href="/portfolio/deepsupport-os/">
-          <span class="repo-name">DeepSupport OS</span>
-          <span class="repo-desc">Microsoft 365 工单排障，包含任务编排、人工审批和自动化评测。</span>
-          <span class="repo-category">Agent 系统</span>
-          <span class="repo-tech">Vue3 · LangGraph · MCP · RAG</span>
-          <span class="row-arrow" aria-hidden="true">↗</span>
+        <article class="featured-entry">
+        <a class="featured-preview" href="/portfolio/deepsupport-os/#architecture">
+          <img src="/assets/images/deepsupport-architecture-preview.webp" width="720" height="480" alt="DeepSupport OS 架构图">
         </a>
+        <div class="featured-copy">
+          <h4><a href="/portfolio/deepsupport-os/">DeepSupport OS <span aria-hidden="true">↗</span></a></h4>
+          <p>从 Outlook 登录故障出发，先核对账号和工单，再按 SOP 排障。重置密码这类写操作需要人工批准。</p>
+          <p class="featured-tech">Vue 3 · LangGraph · MCP</p>
+          <div class="featured-actions">
+            <a href="/portfolio/deepsupport-os/#architecture">查看架构图 <span aria-hidden="true">→</span></a>
+            <a href="/portfolio/deepsupport-os/#quickstart">本地运行 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
       </li>
       <li class="repo-row" data-category="agent">
-        <a class="repo-main" href="/portfolio/agent-eval-platform/">
-          <span class="repo-name">Agent 运行时评估平台</span>
-          <span class="repo-desc">基于运行轨迹做六维评估，支持多模型共识和增量回归。</span>
-          <span class="repo-category">Agent 系统</span>
-          <span class="repo-tech">FastAPI · LangGraph · LLM-as-Judge</span>
-          <span class="row-arrow" aria-hidden="true">↗</span>
+        <article class="featured-entry">
+        <a class="featured-preview sdk-preview" aria-label="查看 Agent 评估平台 SDK 示例源码" href="https://github.com/daetz-coder/Agent-Runtime-Evaluation-Platform/blob/main/example/sdk_demo.py">
+          <pre><code>from sdk import instrument_langgraph
+
+graph = instrument_langgraph(build_graph())</code></pre>
         </a>
+        <div class="featured-copy">
+          <h4><a href="/portfolio/agent-eval-platform/">Agent Runtime Evaluation Platform <span aria-hidden="true">↗</span></a></h4>
+          <p>Python 或 JavaScript SDK 采集运行轨迹，评估规划、工具调用和检索等六个维度，支持增量回归。</p>
+          <p class="featured-tech">Python SDK · JavaScript SDK · LLM-as-Judge</p>
+          <div class="featured-actions">
+            <a href="https://github.com/daetz-coder/Agent-Runtime-Evaluation-Platform/blob/main/example/sdk_demo.py">查看 SDK 示例源码 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
       </li>
       <li class="repo-row" data-category="agent">
         <a class="repo-main" href="/projects/agentlink/">
           <span class="repo-name">AgentLink</span>
           <span class="repo-desc">Claude Code 手机协作：手机审批、回答问题、同一会话继续。WebSocket 双向桥接。</span>
-          <span class="repo-category">Agent 系统</span>
           <span class="repo-tech">Flutter · Node.js · WebSocket</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -176,52 +103,94 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/agentforge/">
           <span class="repo-name">AgentForge</span>
           <span class="repo-desc">Windows 控制台：自动检测用量上限、切换账户并同会话续跑。</span>
-          <span class="repo-category">Agent 系统</span>
           <span class="repo-tech">Python · Flutter · FastAPI</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
+      </ul>
+    </section>
+    <section class="catalog-group" data-project-group id="group-rag" aria-labelledby="heading-rag">
+      <header class="group-heading">
+        <h3 id="heading-rag">知识检索与 RAG</h3>
+        <p>中文企业报告问答、引用核查与个人知识库。</p>
+      </header>
+      <ul class="repo-list">
       <li class="repo-row" data-category="rag">
-        <a class="repo-main" href="/portfolio/raglab/">
-          <span class="repo-name">RAGLab</span>
-          <span class="repo-desc">中文企业公开报告 Hybrid RAG：Docling · Qdrant 稠密/稀疏检索 · 带引用生成与拒答。</span>
-          <span class="repo-category">知识检索</span>
-          <span class="repo-tech">FastAPI · Qdrant · Docling · Vue3</span>
-          <span class="row-arrow" aria-hidden="true">↗</span>
+        <article class="featured-entry">
+        <a class="featured-preview" href="/portfolio/raglab/#preview">
+          <img src="/assets/images/raglab.webp" width="1024" height="571" alt="RAGLab 问答页面与右侧引用依据">
         </a>
+        <div class="featured-copy">
+          <h4><a href="/portfolio/raglab/">RAGLab <span aria-hidden="true">↗</span></a></h4>
+          <p>Docling 解析 PDF，Qdrant 做语义与关键词召回。回答带原文依据，检索效果可在评测看板里核查。</p>
+          <p class="featured-tech">Docling · Qdrant · FastAPI</p>
+          <div class="featured-actions">
+            <a href="/portfolio/raglab/#preview">查看问答截图 <span aria-hidden="true">→</span></a>
+            <a href="/portfolio/raglab/#quickstart">本地运行 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
       </li>
       <li class="repo-row" data-category="rag">
         <a class="repo-main" href="/projects/wiki-agent/">
           <span class="repo-name">wiki-agent</span>
           <span class="repo-desc">AI 驱动个人知识库：对话即录入、搜索即召回，LangGraph 编排。</span>
-          <span class="repo-category">知识检索</span>
           <span class="repo-tech">LangGraph · FastAPI · Vue3</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
+      </ul>
+    </section>
+    <section class="catalog-group" data-project-group id="group-dsh" aria-labelledby="heading-dsh">
+      <header class="group-heading">
+        <h3 id="heading-dsh">DeepSeek Harness 工具</h3>
+        <p>桌面多会话工作台和 Android 远程接入。</p>
+      </header>
+      <ul class="repo-list">
       <li class="repo-row" data-category="dsh">
-        <a class="repo-main" href="/portfolio/dsh-multi-chat/">
-          <span class="repo-name">DSH Multi Chat</span>
-          <span class="repo-desc">DeepSeek Harness 多窗口墙插件：并排监控 N 个 Agent 实例 + 认证局域网网关。</span>
-          <span class="repo-category">Harness 插件</span>
-          <span class="repo-tech">TypeScript · React · Cordis · npm</span>
-          <span class="row-arrow" aria-hidden="true">↗</span>
+        <article class="featured-entry">
+        <a class="featured-preview" href="/portfolio/dsh-multi-chat/#preview">
+          <img src="/assets/images/dsh.webp" width="1200" height="522" loading="lazy" alt="Windows 双会话实拍">
         </a>
+        <div class="featured-copy">
+          <h4><a href="/portfolio/dsh-multi-chat/">DSH Multi Chat <span aria-hidden="true">↗</span></a></h4>
+          <p>将多窗口注册成 DeepSeek Harness 的内置视图。可以并排查看多个会话，并通过带认证的局域网网关接入其他设备。</p>
+          <p class="featured-tech">TypeScript · React · Cordis</p>
+          <div class="featured-actions">
+            <a href="/portfolio/dsh-multi-chat/#preview">查看桌面截图 <span aria-hidden="true">→</span></a>
+            <a href="/portfolio/dsh-multi-chat/#quickstart">安装说明 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
       </li>
       <li class="repo-row" data-category="dsh">
-        <a class="repo-main" href="/projects/dsh-mobile/">
-          <span class="repo-name">DSH Mobile</span>
-          <span class="repo-desc">把 DeepSeek Harness 装进口袋：扫码配对、状态通知、桌面远程控制。</span>
-          <span class="repo-category">Harness 插件</span>
-          <span class="repo-tech">Android · Capacitor · Remote</span>
-          <span class="row-arrow" aria-hidden="true">↗</span>
+        <article class="featured-entry">
+        <a class="featured-preview" href="/projects/dsh-mobile/#preview">
+          <img src="/assets/images/dsh-mobile-chat.webp" width="560" height="1100" loading="lazy" alt="Android 会话实拍">
         </a>
+        <div class="featured-copy">
+          <h4><a href="/projects/dsh-mobile/">DSH Mobile <span aria-hidden="true">↗</span></a></h4>
+          <p>Android 端扫码连接桌面会话，输入 PIN 完成配对后即可查看状态并继续操作。</p>
+          <p class="featured-tech">Android · Capacitor</p>
+          <div class="featured-actions">
+            <a href="/projects/dsh-mobile/#preview">查看 Android 截图 <span aria-hidden="true">→</span></a>
+            <a href="https://daetz-coder.github.io/DSH-Mobile/">打开项目官网 <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
       </li>
+      </ul>
+    </section>
+    <section class="catalog-group" data-project-group id="group-ml" aria-labelledby="heading-ml">
+      <header class="group-heading" id="ml">
+        <h3 id="heading-ml">机器学习与研究复现</h3>
+        <p>信号分类、视觉检测、轨迹预测和小样本学习。</p>
+      </header>
+      <ul class="repo-list">
       <li class="repo-row" data-category="ml">
         <a class="repo-main" href="/projects/radioml-cnn/">
           <span class="repo-name">RadioML CNN</span>
           <span class="repo-desc">调制信号识别：MLP / CNN / ResNet 对比实验。</span>
-          <span class="repo-category">机器学习</span>
           <span class="repo-tech">PyTorch · CNN · ResNet · 信号处理</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -230,7 +199,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/radioml-benchmark/">
           <span class="repo-name">RadioML Benchmark</span>
           <span class="repo-desc">RadioML2016.10a 调制信号识别基准：多模型统一评估。</span>
-          <span class="repo-category">机器学习</span>
           <span class="repo-tech">AMC · Baseline</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -239,7 +207,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/cicddos2019-detection/">
           <span class="repo-name">DDoS 检测</span>
           <span class="repo-desc">CIC-DDoS2019 网络入侵检测，含 PCA/t-SNE 分析与数据可视化。</span>
-          <span class="repo-category">机器学习</span>
           <span class="repo-tech">机器学习 · 深度学习 · PCA · t-SNE</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -248,7 +215,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/metal-surface-defects/">
           <span class="repo-name">金属缺陷检测</span>
           <span class="repo-desc">金属表面缺陷检测实战，工业质检方向。</span>
-          <span class="repo-category">机器学习</span>
           <span class="repo-tech">计算机视觉 · CNN · 工业质检</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -257,7 +223,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/vectornet-replication/">
           <span class="repo-name">VectorNet 复现</span>
           <span class="repo-desc">VectorNet 轨迹预测复现，含可直接运行的 mini 数据集。</span>
-          <span class="repo-category">机器学习</span>
           <span class="repo-tech">VectorNet · 自动驾驶 · 图网络</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -266,7 +231,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/pytorch-maml/">
           <span class="repo-name">Pytorch-MAML</span>
           <span class="repo-desc">Omniglot few-shot 元学习：MAML 复现与讲解。</span>
-          <span class="repo-category">机器学习</span>
           <span class="repo-tech">MAML · Few-shot · 元学习</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -275,7 +239,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/emotion-detection/">
           <span class="repo-name">情绪识别</span>
           <span class="repo-desc">实时人脸情绪识别，Server/Local 双端部署。</span>
-          <span class="repo-category">机器学习</span>
           <span class="repo-tech">计算机视觉 · EfficientNet</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -284,7 +247,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/trajectory-prediction/">
           <span class="repo-name">TrajectoryPrediction</span>
           <span class="repo-desc">NuScenes 轨迹预测实践：数据管线、模型训练与评估。</span>
-          <span class="repo-category">机器学习</span>
           <span class="repo-tech">NuScenes · Python</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -293,25 +255,22 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/mesh-denoising/">
           <span class="repo-name">Mesh-Denoising</span>
           <span class="repo-desc">网格去噪方法复现：「Non-Iterative, Feature-Preserving Mesh Smoothing」。</span>
-          <span class="repo-category">机器学习</span>
           <span class="repo-tech">几何 · Python · 复现</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
-      <li class="repo-row" data-category="tool">
-        <a class="repo-main" href="/portfolio/pixel-asset-workshop/">
-          <span class="repo-name">Pixel Asset Workshop</span>
-          <span class="repo-desc">将一条生成视频拆成多组透明像素帧，自动清理色边，并在 Godot 中预览。作品页包含流程视频与实测素材。</span>
-          <span class="repo-category">工具与应用</span>
-          <span class="repo-tech">Pixel Art · SpriteFrame · Godot</span>
-          <span class="row-arrow" aria-hidden="true">↗</span>
-        </a>
-      </li>
+      </ul>
+    </section>
+    <section class="catalog-group" data-project-group id="group-tool" aria-labelledby="heading-tool">
+      <header class="group-heading">
+        <h3 id="heading-tool">开发与研究工具</h3>
+        <p>自动化编码、Git 周报、科研工作流和应用实践。</p>
+      </header>
+      <ul class="repo-list">
       <li class="repo-row" data-category="tool">
         <a class="repo-main" href="/projects/curloop/">
           <span class="repo-name">CurLoop</span>
           <span class="repo-desc">无人值守 Cursor 编码循环：CDP 驱动真实 Cursor，自动换号并接入原会话。</span>
-          <span class="repo-category">工具与应用</span>
           <span class="repo-tech">CDP · Cursor · Python · Node.js</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -320,7 +279,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/git-reporter/">
           <span class="repo-name">git-reporter</span>
           <span class="repo-desc">从 git 提交历史自动生成日/周/月报，双语输出、多输出模式，5 秒生成工作汇报。</span>
-          <span class="repo-category">工具与应用</span>
           <span class="repo-tech">Claude Code · Skill · LLM</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -329,7 +287,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/storage-lens/">
           <span class="repo-name">Storage-Lens</span>
           <span class="repo-desc">离线手机存储分析器：Treemap 可视化空间去向，安全识别重复文件与大文件。</span>
-          <span class="repo-category">工具与应用</span>
           <span class="repo-tech">Android · Flutter · Treemap · 离线</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -338,7 +295,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/research-tools/">
           <span class="repo-name">research-tools</span>
           <span class="repo-desc">理工科科研工具集合：文献管理、论文写作、数据处理全流程工具与教程。</span>
-          <span class="repo-category">工具与应用</span>
           <span class="repo-tech">文献 · 写作 · 数据 · 教程</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -347,7 +303,6 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/campus-recycling-mall/">
           <span class="repo-name">校园旧物回收商城</span>
           <span class="repo-desc">校园旧物回收商城：买家卖家双角色，JWT、MybatisPlus、ElementUI。</span>
-          <span class="repo-category">工具与应用</span>
           <span class="repo-tech">Vue2 · Springboot · JWT · ElementUI</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
@@ -356,17 +311,43 @@ graph = instrument_langgraph(build_graph())</code></pre>
         <a class="repo-main" href="/projects/transform-and-ids/">
           <span class="repo-name">TransformAndIDS</span>
           <span class="repo-desc">数据挖掘 + 网络入侵检测：特征变换与检测建模，附可演示分析流程。</span>
-          <span class="repo-category">工具与应用</span>
           <span class="repo-tech">Data Mining · IDS · Python · Demo</span>
           <span class="row-arrow" aria-hidden="true">↗</span>
         </a>
       </li>
       </ul>
-      <div class="no-results" hidden>
-        <p>没有匹配的项目。</p><button type="button" id="reset-search">清除搜索与筛选</button>
-      </div>
+    </section>
+    <section class="catalog-group" data-project-group id="group-game" aria-labelledby="heading-game">
+      <header class="group-heading">
+        <h3 id="heading-game">游戏资产工具</h3>
+        <p>从生成视频提取角色动作，导出透明帧并在 Godot 中验证。</p>
+      </header>
+      <ul class="repo-list">
+      <li class="repo-row" data-category="game">
+        <article class="featured-entry">
+        <a class="featured-preview" href="/portfolio/pixel-asset-workshop/#preview">
+          <img src="/assets/images/pixel-training-preview.webp" width="480" height="305" loading="lazy" alt="Godot 训练场内两排兵种的对照画面">
+        </a>
+        <div class="featured-copy">
+          <h4><a href="/portfolio/pixel-asset-workshop/">Pixel Asset Workshop <span aria-hidden="true">↗</span></a></h4>
+          <p>用一段视频制作六个兵种的动作，经 SpriteFrame 拆帧、去底和筛选，再到 Godot 训练场与原版兵种对照。</p>
+          <p class="featured-tech">SpriteFrame · Godot · 透明 PNG</p>
+          <div class="featured-actions">
+            <a href="/portfolio/pixel-asset-workshop/#preview">播放 Godot 实录 <span aria-hidden="true">→</span></a>
+            <a href="/projects/pixel-asset-workshop/index.zh.html">打开中文流程演示 <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </article>
+      </li>
+      </ul>
+    </section>
+    </div>
+    <div class="no-results" hidden>
+      <p>没有匹配的项目。试试项目名、技术名，或切换到全部分类。</p>
+      <button type="button" id="reset-search">清除搜索与筛选</button>
     </div>
   </section>
+
   <nav class="related-links" aria-label="更多内容">
     <a id="blog" href="/portfolio/notes/#blog">技术文章</a><a id="platforms" href="/portfolio/notes/#platforms">开源平台</a>
     <a id="now" href="/portfolio/notes/#now">近期工作</a><a id="stack" href="/portfolio/notes/#stack">技术栈</a>
